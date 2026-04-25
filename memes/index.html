@@ -1,0 +1,66 @@
+---
+layout: default
+title: meme vault
+---
+
+<style>
+  .meme-heading {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #fff;
+    text-shadow: 0 0 60px rgba(168,85,247,0.5);
+    margin-bottom: 8px;
+  }
+
+  .meme-sub {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 40px;
+    font-style: italic;
+  }
+
+  .meme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .meme-card {
+    background: #0d0d0d;
+    border: 1.5px solid rgba(255,255,255,0.75);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .meme-card:hover {
+    border-color: rgba(168,85,247,0.7);
+    box-shadow: 0 0 28px rgba(168,85,247,0.12);
+  }
+
+  .meme-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .meme-caption {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.35);
+    padding: 10px 14px;
+    font-style: italic;
+  }
+</style>
+
+<h1 class="meme-heading">meme vault</h1>
+<p class="meme-sub">curated chaos</p>
+
+<div class="meme-grid">
+
+  <div class="meme-card">
+    <img src="{{ '/memes/images/meme1.jpg' | relative_url }}" alt="meme">
+    <p class="meme-caption">optional caption here</p>
+  </div>
+
+</div>

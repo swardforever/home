@@ -193,14 +193,13 @@ layout: default
         to contact me, my socials are below! feel free to reach out to chat; i'm always looking for new impressions.
       </p>
     </div>
-
-    <!-- Right box: Recent posts (auto-populated from _posts/) -->
+    
     <div class="box">
       <div class="box-label">recent posts</div>
       <ul class="blog-list">
         {% for post in site.posts limit:6 %}
         <li>
-          <a href="{{ post.url }}">
+          <a href="{{ post.url | relative_url }}">
             <span>{{ post.title }}</span>
             <span class="post-meta-small">
               {{ post.date | date: "%b %Y" }}{% if post.tags %} &middot; {{ post.tags | first }}{% endif %}

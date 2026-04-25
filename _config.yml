@@ -1,0 +1,12 @@
+title: sward
+description: blog & landing page
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+# Exclude files from build
+exclude:
+  - README.md

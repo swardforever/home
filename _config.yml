@@ -10,3 +10,6 @@ permalink: /blog/:year/:month/:day/:title/
 # Exclude files from build
 exclude:
   - README.md
+  - node_modules
+  - vendor
+  - .git

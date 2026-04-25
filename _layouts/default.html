@@ -287,6 +287,14 @@
     }
   </style>
 </head>
+  
+<script>
+  const nav = document.querySelector('.site-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  });
+</script>
+
 <body>
   <nav class="site-nav">
     <a href="{{ '/' | relative_url }}" class="nav-home">home</a>

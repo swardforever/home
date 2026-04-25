@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "On the elegance of Lagrangian mechanics"
+title: "Gukesh's great choke"
 date: 2026-04-25
-tags: [physics]
+tags: [chess]
 ---

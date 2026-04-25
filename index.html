@@ -329,11 +329,8 @@
           to contact me, my socials are below! feel free to reach out to chat; i'm always looking for new impressions.
         </p>
       </div>
-
-      <!-- Right box: Blog (scrollable with blur) -->
-      <div class="scroll-fade-wrapper" id="scrollWrapper">
-        <div class="fade-top" id="fadeTop"></div>
-        <div class="box scrollable" id="scrollBox">
+      
+      <div class="box">
           <div class="box-label">recent posts</div>
           <ul class="blog-list">
             <li>
@@ -373,6 +370,7 @@
               </a>
             </li>
           </ul>
+          <a class="meme-link" href="/blog/"> all posts →</a>
           <a class="meme-link" href="#">meme vault &rarr;</a>
         </div>
       </div>
@@ -389,21 +387,5 @@
       </a>
     </nav>
   </div>
-
-  <script>
-    // Activate blur fade when right box is scrolled
-    const scrollBox = document.getElementById('scrollBox');
-    const scrollWrapper = document.getElementById('scrollWrapper');
-
-    if (scrollBox && scrollWrapper) {
-      scrollBox.addEventListener('scroll', () => {
-        if (scrollBox.scrollTop > 8) {
-          scrollWrapper.classList.add('scrolled');
-        } else {
-          scrollWrapper.classList.remove('scrolled');
-        }
-      });
-    }
-  </script>
 </body>
 </html>

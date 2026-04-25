@@ -5,14 +5,284 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} — sward{% else %}sward{% endif %}</title>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple-start: #1a0033;
+      --purple-mid: #3b0068;
+      --purple-end: #6b21a8;
+      --purple-light: #a855f7;
+      --box-bg: #0d0d0d;
+      --box-border: rgba(255,255,255,0.75);
+      --muted: rgba(255,255,255,0.35);
+      --text: #f0e8ff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lexend', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      background: linear-gradient(160deg, var(--purple-start) 0%, var(--purple-mid) 45%, var(--purple-end) 100%);
+      background-attachment: fixed;
+      color: var(--text);
+      padding: 0 24px 80px;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Nav ── */
+    .site-nav {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 24px 0 0;
+      margin-bottom: 48px;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .nav-home {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      margin-right: auto;
+    }
+
+    .nav-link {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover { color: rgba(255,255,255,0.6); }
+
+    /* ── Page content ── */
+    .page-content {
+      position: relative;
+      z-index: 1;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* ── Blog index ── */
+    .blog-index-heading {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #fff;
+      text-shadow: 0 0 60px rgba(168,85,247,0.5);
+      margin-bottom: 8px;
+    }
+
+    .blog-index-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 40px;
+      font-style: italic;
+    }
+
+    .post-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .post-card {
+      background: var(--box-bg);
+      border: 1.5px solid var(--box-border);
+      border-radius: 14px;
+      padding: 22px 26px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .post-card:nth-child(1) { animation-delay: 0.05s; }
+    .post-card:nth-child(2) { animation-delay: 0.12s; }
+    .post-card:nth-child(3) { animation-delay: 0.19s; }
+    .post-card:nth-child(4) { animation-delay: 0.26s; }
+    .post-card:nth-child(5) { animation-delay: 0.33s; }
+    .post-card:nth-child(n+6) { animation-delay: 0.4s; }
+
+    .post-card:hover {
+      border-color: rgba(168,85,247,0.7);
+      box-shadow: 0 0 28px rgba(168,85,247,0.12);
+    }
+
+    .post-card a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .post-card .card-title {
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba(240,232,255,0.92);
+      transition: color 0.2s;
+    }
+
+    .post-card:hover .card-title { color: #fff; }
+
+    .post-card .card-meta {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .post-card .tag {
+      background: rgba(168,85,247,0.15);
+      border: 1px solid rgba(168,85,247,0.3);
+      border-radius: 4px;
+      padding: 1px 7px;
+      font-size: 0.68rem;
+      color: var(--purple-light);
+    }
+
+    /* ── Individual post ── */
+    .post { max-width: 680px; }
+
+    .post-header { margin-bottom: 40px; }
+
+    .back-link {
+      display: inline-block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: rgba(255,255,255,0.6); }
+
+    .post-title {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+      text-shadow: 0 0 40px rgba(168,85,247,0.4);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .post-tags { display: flex; gap: 6px; }
+
+    .post-body {
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: rgba(240,232,255,0.82);
+    }
+
+    .post-body h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 2em 0 0.6em;
+      letter-spacing: -0.01em;
+    }
+
+    .post-body h3 {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: rgba(240,232,255,0.9);
+      margin: 1.6em 0 0.5em;
+    }
+
+    .post-body p { margin-bottom: 1.2em; }
+
+    .post-body a {
+      color: var(--purple-light);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .post-body blockquote {
+      border-left: 2px solid var(--purple-light);
+      margin: 1.5em 0;
+      padding: 0.5em 0 0.5em 20px;
+      color: rgba(240,232,255,0.6);
+      font-style: italic;
+    }
+
+    .post-body code {
+      font-family: 'Courier New', monospace;
+      background: rgba(168,85,247,0.1);
+      border: 1px solid rgba(168,85,247,0.2);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 0.88em;
+      color: var(--purple-light);
+    }
+
+    .post-body pre {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 18px 20px;
+      overflow-x: auto;
+      margin: 1.5em 0;
+    }
+
+    .post-body pre code { background: none; border: none; padding: 0; color: rgba(240,232,255,0.8); }
+
+    .post-body ul, .post-body ol { margin: 0.8em 0 1.2em 1.4em; }
+    .post-body li { margin-bottom: 0.4em; }
+
+    .post-body hr {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin: 2.5em 0;
+    }
+
+    /* ── Animation ── */
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .post { max-width: 100%; }
+    }
+  </style>
 </head>
 <body>
   <nav class="site-nav">
     <a href="/" class="nav-home">sward</a>
     <a href="/blog/" class="nav-link">blog</a>
   </nav>
-<!--nbh-->
   <main class="page-content">
     {{ content }}
   </main>

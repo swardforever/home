@@ -3,10 +3,403 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Site</title>
+  <title>sward</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --purple-start: #1a0033;
+      --purple-mid: #3b0068;
+      --purple-end: #6b21a8;
+      --purple-light: #a855f7;
+      --box-bg: #0d0d0d;
+      --box-border: rgba(255, 255, 255, 0.75);
+      --muted: rgba(255, 255, 255, 0.35);
+      --text: #f0e8ff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Lexend', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      background: linear-gradient(160deg, var(--purple-start) 0%, var(--purple-mid) 45%, var(--purple-end) 100%);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 24px 80px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Subtle noise texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 960px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── Header ── */
+    .site-heading {
+      font-size: clamp(3.5rem, 10vw, 6.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: #fff;
+      text-shadow: 0 0 60px rgba(168, 85, 247, 0.6), 0 2px 12px rgba(0,0,0,0.4);
+      margin-bottom: 14px;
+    }
+
+    .site-subheading {
+      font-size: clamp(0.85rem, 2vw, 1.05rem);
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.65);
+      letter-spacing: 0.04em;
+      margin-bottom: 40px;
+      font-style: italic;
+    }
+
+    /* ── Two-column boxes ── */
+    .boxes-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+      margin-bottom: 36px;
+    }
+
+    .box {
+      background: var(--box-bg);
+      border: 1.5px solid var(--box-border);
+      border-radius: 16px;
+      padding: 28px 26px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box:hover {
+      border-color: rgba(168, 85, 247, 0.7);
+      box-shadow: 0 0 30px rgba(168, 85, 247, 0.15);
+    }
+
+    /* Scrollable right box */
+    .box.scrollable {
+      max-height: 280px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(168, 85, 247, 0.4) transparent;
+    }
+
+    .box.scrollable::-webkit-scrollbar {
+      width: 4px;
+    }
+    .box.scrollable::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .box.scrollable::-webkit-scrollbar-thumb {
+      background: rgba(168, 85, 247, 0.4);
+      border-radius: 2px;
+    }
+
+    /* Blur fade at top on scroll */
+    .scroll-fade-wrapper {
+      position: relative;
+      max-height: 280px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .scroll-fade-wrapper .fade-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 48px;
+      background: linear-gradient(to bottom, rgba(13,13,13,0.85) 0%, transparent 100%);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .scroll-fade-wrapper.scrolled .fade-top {
+      opacity: 1;
+    }
+
+    .scroll-fade-wrapper .box.scrollable {
+      max-height: 280px;
+      border-radius: 16px;
+    }
+
+    .box-label {
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      margin-bottom: 14px;
+    }
+
+    .box p {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: rgba(240, 232, 255, 0.82);
+      font-weight: 300;
+    }
+
+    /* Blog links in right box */
+    .blog-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .blog-list li {
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding-bottom: 12px;
+    }
+
+    .blog-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .blog-list a {
+      color: rgba(240, 232, 255, 0.85);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 300;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      transition: color 0.2s ease;
+    }
+
+    .blog-list a:hover {
+      color: #fff;
+    }
+
+    .blog-list .post-title {
+      color: rgba(240, 232, 255, 0.9);
+    }
+
+    .blog-list .post-meta {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .meme-link {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 0.82rem;
+      color: var(--purple-light);
+      text-decoration: none;
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      border-radius: 6px;
+      padding: 6px 14px;
+      transition: background 0.2s ease, border-color 0.2s ease;
+      font-weight: 300;
+    }
+
+    .meme-link:hover {
+      background: rgba(168, 85, 247, 0.12);
+      border-color: rgba(168, 85, 247, 0.6);
+    }
+
+    /* ── Social links ── */
+    .socials {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 4px;
+    }
+
+    .socials a {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .socials a:hover {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .socials a svg {
+      width: 13px;
+      height: 13px;
+      fill: currentColor;
+      opacity: 0.7;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .boxes-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .scroll-fade-wrapper {
+        max-height: none;
+        overflow: visible;
+      }
+      .scroll-fade-wrapper .box.scrollable {
+        max-height: none;
+        overflow: visible;
+      }
+      .scroll-fade-wrapper .fade-top {
+        display: none;
+      }
+    }
+
+    /* ── Entrance animation ── */
+    .container > * {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.7s ease forwards;
+    }
+    .site-heading      { animation-delay: 0.05s; }
+    .site-subheading   { animation-delay: 0.18s; }
+    .boxes-wrapper     { animation-delay: 0.32s; }
+    .socials           { animation-delay: 0.46s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-  <h1>sward</h1>
-  <p>blog & landing page</p>
+  <div class="container">
+    <h1 class="site-heading">sward</h1>
+    <p class="site-subheading">/swôrd/ &mdash; noun: a swath of grass covering land</p>
+
+    <div class="boxes-wrapper">
+      <!-- Left box: Bio -->
+      <div class="box">
+        <div class="box-label">about</div>
+        <p>
+          Welcome to my social landing platform! I'm Marina Yuan, and I study physics at Caltech.
+          I medaled in the USAPhO exam when I was younger and hope to build upon that foundation in college.
+          I occasionally post in my blog, where you can find articles on research, discoveries, and questions
+          in math and science, as well as some of my hobbies like track, chess, philosophy, and some life rants.
+          I might also post some memes :D. To contact me, my socials are below!
+        </p>
+      </div>
+
+      <!-- Right box: Blog (scrollable with blur) -->
+      <div class="scroll-fade-wrapper" id="scrollWrapper">
+        <div class="fade-top" id="fadeTop"></div>
+        <div class="box scrollable" id="scrollBox">
+          <div class="box-label">recent posts</div>
+          <ul class="blog-list">
+            <li>
+              <a href="#">
+                <span class="post-title">On the elegance of Lagrangian mechanics</span>
+                <span class="post-meta">Apr 2026 &middot; physics</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="post-title">What running taught me about failure</span>
+                <span class="post-meta">Mar 2026 &middot; track &amp; life</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="post-title">A beginner's guide to combinatorics</span>
+                <span class="post-meta">Mar 2026 &middot; math</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="post-title">Philosophy of science: is anything provable?</span>
+                <span class="post-meta">Feb 2026 &middot; philosophy</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="post-title">Chess openings I've been obsessing over</span>
+                <span class="post-meta">Jan 2026 &middot; chess</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="post-title">USAPhO prep: what actually helped</span>
+                <span class="post-meta">Dec 2025 &middot; physics</span>
+              </a>
+            </li>
+          </ul>
+          <a class="meme-link" href="#">🫠 meme vault &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social links -->
+    <nav class="socials">
+      <a href="#">
+        <!-- Discord icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.031.055a19.905 19.905 0 0 0 5.993 3.029.079.079 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.029.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028z"/></svg>
+        discord
+      </a>
+      <a href="#">
+        <!-- Email icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        email
+      </a>
+      <a href="#">
+        <!-- X/Twitter icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        twitter
+      </a>
+    </nav>
+  </div>
+
+  <script>
+    // Activate blur fade when right box is scrolled
+    const scrollBox = document.getElementById('scrollBox');
+    const scrollWrapper = document.getElementById('scrollWrapper');
+
+    if (scrollBox && scrollWrapper) {
+      scrollBox.addEventListener('scroll', () => {
+        if (scrollBox.scrollTop > 8) {
+          scrollWrapper.classList.add('scrolled');
+        } else {
+          scrollWrapper.classList.remove('scrolled');
+        }
+      });
+    }
+  </script>
 </body>
 </html>

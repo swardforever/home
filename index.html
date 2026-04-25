@@ -3,6 +3,52 @@ layout: default
 ---
 
 <style>
+  .sidebar-left,
+  .sidebar-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 8px 0;
+  }
+
+  .flame {
+    width: 10px;
+    height: 16px;
+    background: radial-gradient(ellipse at 50% 100%, #c084fc 0%, #7e22ce 50%, transparent 80%);
+    border-radius: 50% 50% 30% 30% / 60% 60% 40% 40%;
+    filter: blur(1.5px);
+    opacity: 0.4;
+    animation: flamePulse 2.4s ease-in-out infinite;
+  }
+
+  .flame:nth-child(2)  { animation-delay: 0.2s;  opacity: 0.35; width: 8px;  height: 13px; }
+  .flame:nth-child(3)  { animation-delay: 0.5s;  opacity: 0.45; width: 11px; height: 17px; }
+  .flame:nth-child(4)  { animation-delay: 0.7s;  opacity: 0.3;  width: 7px;  height: 12px; }
+  .flame:nth-child(5)  { animation-delay: 1.0s;  opacity: 0.4;  width: 9px;  height: 15px; }
+  .flame:nth-child(6)  { animation-delay: 1.3s;  opacity: 0.35; width: 10px; height: 14px; }
+  .flame:nth-child(7)  { animation-delay: 0.3s;  opacity: 0.45; width: 8px;  height: 16px; }
+  .flame:nth-child(8)  { animation-delay: 0.9s;  opacity: 0.3;  width: 11px; height: 13px; }
+  .flame:nth-child(9)  { animation-delay: 1.5s;  opacity: 0.4;  width: 7px;  height: 15px; }
+  .flame:nth-child(10) { animation-delay: 0.6s;  opacity: 0.35; width: 9px;  height: 12px; }
+  .flame:nth-child(11) { animation-delay: 1.1s;  opacity: 0.45; width: 10px; height: 17px; }
+  .flame:nth-child(12) { animation-delay: 1.8s;  opacity: 0.3;  width: 8px;  height: 14px; }
+
+  @keyframes flamePulse {
+    0%, 100% {
+      transform: scaleX(1) scaleY(1) translateY(0px);
+      filter: blur(1.5px) brightness(1);
+    }
+    33% {
+      transform: scaleX(0.8) scaleY(1.15) translateY(-2px);
+      filter: blur(1px) brightness(1.4);
+    }
+    66% {
+      transform: scaleX(1.15) scaleY(0.9) translateY(1px);
+      filter: blur(2px) brightness(0.85);
+    }
+  }
+  
   .home-wrap {
     display: flex;
     flex-direction: column;
@@ -31,10 +77,11 @@ layout: default
 
   .boxes-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
+    grid-template-columns: 48px 1fr 1fr 48px;
+    gap: 48px;
     width: 100%;
     margin-bottom: 36px;
+    align-items: start;
   }
 
   .box {
@@ -172,8 +219,35 @@ layout: default
   <p class="site-subheading">/swôrd/ &mdash; noun: a swath of grass covering land</p>
 
   <div class="boxes-wrapper">
-
-    <!-- Left box: Bio -->
+  <div class="sidebar-left">
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+  </div>
+  <div class="sidebar-right">
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+    <div class="flame"></div>
+  </div>
+    
     <div class="box">
       <div class="box-label">about</div>
       <p>

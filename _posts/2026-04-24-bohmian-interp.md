@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "the flaws with the Bohmian interpretation"
+title: "questioning the Lagrangian"
 date: 2026-04-24
 tags: [physics]
 ---

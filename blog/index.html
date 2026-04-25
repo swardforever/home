@@ -9,7 +9,7 @@ title: blog
 <ul class="post-list">
   {% for post in site.posts %}
     <li class="post-card">
-      <a href="{{ post.url }}">
+      <a href="{{ post.url | relative_url }}">
         <span class="card-title">{{ post.title }}</span>
         <span class="card-meta">
           <time>{{ post.date | date: "%B %-d, %Y" }}</time>

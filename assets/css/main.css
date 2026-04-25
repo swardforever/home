@@ -36,7 +36,6 @@ body::before {
   z-index: 0;
 }
 
-/* ── Nav ── */
 .site-nav {
   position: relative;
   z-index: 10;

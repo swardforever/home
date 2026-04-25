@@ -1,7 +1,7 @@
 title: sward
 description: blog & landing page
-baseurl: ""
-url: ""
+baseurl: "/home"
+url: "https://swardforever.github.io"
 
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/

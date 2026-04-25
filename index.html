@@ -199,7 +199,7 @@ layout: default
     <div class="box">
       <div class="box-label">recent posts</div>
       <ul class="blog-list">
-        {% for post in site.posts limit:4 %}
+        {% for post in site.posts limit:6 %}
         <li>
           <a href="{{ post.url | relative_url }}">
             <span>{{ post.title }}</span>

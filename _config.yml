@@ -8,3 +8,6 @@ permalink: /blog/:year/:month/:day/:title/
 
 exclude:
   - README.md
+  - node_modules
+  - vendor
+  - .git

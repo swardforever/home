@@ -1,0 +1,25 @@
+---
+layout: default
+title: blog
+---
+
+<h1 class="blog-index-heading">blog</h1>
+<p class="blog-index-sub">physics, math, life, and the occasional meme</p>
+
+<ul class="post-list">
+  {% for post in site.posts %}
+    <li class="post-card">
+      <a href="{{ post.url }}">
+        <span class="card-title">{{ post.title }}</span>
+        <span class="card-meta">
+          <time>{{ post.date | date: "%B %-d, %Y" }}</time>
+          {% if post.tags %}
+            {% for tag in post.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          {% endif %}
+        </span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

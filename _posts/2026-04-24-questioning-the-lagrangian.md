@@ -54,7 +54,7 @@ The equations of motion should be unchanged in all inertial reference frames acc
 
 $$x' = x - ut$$
 $$v' = v - u$$
-$$t' = t \qquad L'(x', v', t')
+$$t' = t \qquad L'(x', v', t')$$
 
 ___
 

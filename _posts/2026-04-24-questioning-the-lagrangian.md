@@ -80,19 +80,19 @@ Applying our relativity constraint again will constrain our state function even 
 
 $$L(x', v', t') - L(x, v, t) = \frac{dG(x, t)}{dt}$$
 
-$$[A(x, t) - A(x', t')]v^2 + [B(x', t) - B(x, t)]v + C(x', t) - C(x, t) = v\frac{\partial G}{\partial x} + \frac{\partial G}{\partial t}$$.
+$$[A(x, t) - A(x', t')]v^2 + [B(x', t) - B(x, t)]v + C(x', t) - C(x, t) = v\frac{\partial G}{\partial x} + \frac{\partial G}{\partial t}.$$
 
 The $\boldsymbol{v^2}$ dependence in LHS must be zero for all $\boldsymbol{u}$, hence $\boldsymbol{A}$ can't have any spatial dependence at all. Now it becomes more clear - the same argument goes for temporal dependence, and hence $\boldsymbol{A(x, t) = \text{const}}$. We can then conclude, with our constraints, our most general expression for our state function (one spatial dimension aside):
 
-$$L = \alpha v^2 + B(x, t)v + C(x, t)$$.
+$$L = \alpha v^2 + B(x, t)v + C(x, t).$$
 
 Of course, much of this is drawn on prerequisite knowledge and would've taken much longer than that relatively concise explanation. We identify the constant $\boldsymbol{\alpha}$ as one half of the mass of the body, $\boldsymbol{C(x, t)}$ as the negative of the potential energy, and $\boldsymbol{B(x, t)}$ being a term that we seemingly have not accounted for, but allegedly (from sources beyond my ken) only comes up in discussions related to magnetic fields, meaning it's not my problem to discuss here.
 
 $$L = \alpha v^2 + B(x, t)v + C(x, t)$$ is the most general form of a Lagrangian that we can have, given our fairly minimal symmetry constraints at the start. I should note that this is quite an exceptional amount of constraint on the Lagrangian. Before applying our conditions for certain symmetries, the Lagrangian could look like pretty much anything i.e. square roots, trigonometric functions, exponentiations. Turns out that we are however limited to a second-order polynomial in $\boldsymbol{v}$. And so, in the absence of magnetic fields, the Lagrangian becomes:
 
-$$L = \alpha v^2 + C(x, t)$$, so
+$$L = \alpha v^2 + C(x, t),$$
 
-$$L = T - V$$.
+$$L = T - V.$$
 
 Amazing, we've seemingly proven it! But some important clarifications need to be made.
 
@@ -108,7 +108,7 @@ With this, we must return to the concept of not simply accepting things for the 
 
 So, the real question becomes, why is energy different from the Lagrangian by a sign change on the potential energy $\boldsymbol{V}$? And to that, I was lost. It was the source of much confusion, but a peer suggested upon my inquiry of this matter that it would occur as one applies [Noether's theorem](https://en.wikipedia.org/wiki/Noether%27s_theorem); when you derive energy as the conserved quantity associated with time-translation symmetry, the algebra naturally produces that sign difference. There is no clear, known (to my knowledge) physical intuition of why the signs do in fact differ other than "because the principle of least action forces it to be so". In Lagrangian mechanics, the actual path a system takes is the one that makes the action stationary. If you try $L = T - V$ and plug it into the Euler–Lagrange equations, one would recover a form of Newton's law
 
-$$m\ddot{x} = -\nabla V$$.
+$$m\ddot{x} = -\nabla V.$$
 
 If instead you used $L = T + V$, the same machinery would give
 

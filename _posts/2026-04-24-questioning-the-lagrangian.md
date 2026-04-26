@@ -12,7 +12,7 @@ description: "A proof-based exploration of why the Lagrangian must equal T-V, de
 
 Why is the Lagrangian equal to $$T-V$$?
 
-That is one of the most natural questions a student first encountering the Lagrangian has. Why does it appear the way it does? When I was a freshman in high school and learning about the Lagrangian, I did briefly wonder why it was equal to $$T-V$$, but paid very little mind to it. Lately, however, I thought about it a little more after struggling with some basic problems and ragequitting. Doing a little digging uncovered a brief proof from Landau & Lifschitz. I was unsatisfied with it, however, and after some collaboration with friends, we devised a 'proof' of why the Lagrangian is more or less constrained to some specific boundaries. Such questions in a field commonly regarded as dead such as physics is highly important, which is why I curled a lip witnessing a teacher answer the question with a dismissive "because the laws of nature dictate it so." It is like saying Basel's Theorem appears because God willed it to be, paying no mind to mathematical beauty and induction. If ever that were true, it is but a half-truth. Sans intellectual curiosity, all that scientists have is pretty much just the revision and confirmation of old ideas, never the challenging of paradigms in Galileo, Newton, Einstein. But enough rambling.
+That is one of the most natural questions a student first encountering the Lagrangian has. Why does it appear the way it does? When I was a freshman in high school and learning about the Lagrangian, I did briefly wonder why it was equal to $$T-V$$ (the potential energy of the body subtracted by the kinetic energy of the body), but paid very little mind to it. Lately, however, I thought about it a little more after struggling with some basic problems and ragequitting. Doing a little digging uncovered a brief proof from Landau & Lifschitz. I was unsatisfied with it, however, and after some collaboration with friends, we devised a 'proof' of why the Lagrangian is more or less constrained to some specific boundaries. Such questions in a field commonly regarded as dead such as physics is highly important, which is why I curled a lip witnessing a teacher answer the question with a dismissive "because the laws of nature dictate it so." It is like saying Basel's Theorem appears because God willed it to be, paying no mind to mathematical beauty and induction. If ever that were true, it is but a half-truth. Sans intellectual curiosity, all that scientists have is pretty much just the revision and confirmation of old ideas, never the challenging of paradigms in Galileo, Newton, Einstein. But enough rambling.
 
 ### Assumptions
 
@@ -94,7 +94,62 @@ $$L = \alpha v^2 + C(x, t)$$, so
 
 $$L = T - V$$.
 
-where $\boldsymbol{T} = \frac{1}{2}mv^2$ is the kinetic energy and $\boldsymbol{V}$ the potential energy of the body.
+Amazing, we've seemingly proven it! But some important clarifications need to be made.
+
+### Intellectual Curiosity
+
+By identifying $\boldsymbol{\alpha}$ with $\frac{1}{2}\boldsymbol{m}$, I don't mean to skip an
+important step, where we had to *show* that $\boldsymbol{\alpha}$ is in fact equal to $\frac{1}{2}\boldsymbol{m}$.
+Rather, I think it is more prudent to think of this step as the *definition of mass*. Mass, like most
+fundamental physical things, doesn't actually have a very clear physical description. When you hold a
+heavy object in your hand, that heaviness you feel is the *weight* of that object ($\boldsymbol{mg}$, on
+Earth), not the mass of the object. While we measure ourselves in kilograms, this is in fact somewhat of
+a misnomer, since our scales all measure weight, not mass. While taught in school as an intuitive physical
+property, mass is in fact more abstract than most people realize. We identify it, here in the single-body
+Lagrangian, as the one factor in the expression which depends on that body and that body alone, regardless
+of reference frame. It is the only truly *intrinsic* property that a body can have. The fact that this
+happens to be proportional to what we feel as "heaviness" in an object on Earth is a consequence of
+*gravity*, which depends on the mass, but is not a property of mass itself.
+
+Mass *is* $\boldsymbol{2\alpha}$.⁵
+
+The second part of this last step was identifying $\boldsymbol{C(x, t)}$ with $-V(x, t)$, the negative
+of the potential energy. The obvious question here is, why the minus sign? Now, this one is actually just
+arbitrary, but is the cause of much confusion (to myself). A most common objection to the Lagrangian
+voiced by first-year university students (again, myself included) is: why the minus sign in front of the
+potential energy? Most students will, by the time they enter university, have deeply internalized that
+total energy $\boldsymbol{E = T + V}$, is a profound and important quantity in physics. Safe to say, the
+Lagrangian would cause much less confusion if it happened to equal $\boldsymbol{T + V}$, the energy.
+"I've seen that before, only makes sense that that's what it would be!", students would say. But this
+would be poor judgment. The problem, rather, is one of selective skepticism.
+
+Most people are taught the definition of energy (and the fact of its conservation) in middle school,
+where it is written up on the board and stated as fact. Few people think to question this definition (I,
+perhaps rather embarrassingly, certainly didn't). Why the $\boldsymbol{v^2}$? Why the $+\boldsymbol{V}$
+instead of the $-\boldsymbol{V}$? And even those who do question, likely give up after a short while and
+submit to internalizing the definition of energy as fact, and over time come to think of it as a deeply
+physical truth. But there is nothing intuitively physical about energy! Sure, it certainly is physical,
+in the sense that we use it in physics (same as mass). But can you tell me what it looks like? Can you
+tell me what it feels like? When I first learned Lagrangian mechanics, I used to love asking people for
+their "physical intuition for the Lagrangian", which is a fair, but difficult question. But never once
+did I stop to ask anyone what the physical intuition of energy is, an equally hard, but fair, question!
+Students enter their first analytical mechanics course with an unjustified acceptance of energy, and begin
+harassing its close cousin, the Lagrangian, as if it all of a sudden now has to prove itself. We could
+just as well have flipped signs on our definition of potential energy (which wouldn't be particularly
+unintuitive, because again, the intuition for potential energy isn't quite as deep or rigid as we might
+think), and thus defined energy as $\boldsymbol{T - V}$, and the Lagrangian and $\boldsymbol{T + V}$.
+Would you be happier with this?
+
+So, the real question becomes, well why is energy different from the Lagrangian by a sign change on the
+potential energy, $\boldsymbol{V}$? My best answer to that is that the sign change occurs as you apply
+Noether's theorem to find the energy as the conserved quantity arising from time translational symmetry,
+and that there isn't any obvious physical intuition for why the signs should differ. It's "just" an
+algebraic remnant, the "physical understanding" of which won't be particularly useful. But this is of
+course an unsatisfying answer, and I would be happy to hear better ones! But if you do go looking for
+better ones, remember to be fair, and if I may say, *symmetric*, in your scrutiny. While you may find a
+physical intuition for why the Lagrangian differs from the energy by the flip of a sign, that doesn't
+make either object privileged in terms of "intuition" above the other.
+
 ___
 
-Remark: unfinished article, in progress
+Remark: This is among the more technically complex posts I will make. For such posts, I will add disclaimers before convoluted sections that require high levels of context

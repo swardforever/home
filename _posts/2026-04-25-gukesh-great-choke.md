@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "gukesh's great choke"
-date: 2026-04-25
+date: 2026-04-24
 tags: [chess]
 description: "thoughts and predictions on the youngest world champion's decline"
 ---

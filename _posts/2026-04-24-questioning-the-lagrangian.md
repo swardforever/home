@@ -81,9 +81,9 @@ $$L(x', v', t') - L(x, v, t) = \frac{dG(x, t)}{dt}$$
 
 $$[A(x, t) - A(x', t')]v^2 + [B(x', t) - B(x, t)]v + C(x', t) - C(x, t) = v\frac{\partial G}{\partial x} + \frac{\partial G}{\partial t}$$.
 
-The $\boldsymbol{v^2}$ dependence in LHS must be zero for all $\boldsymbol{u}$, hence $\boldsymbol{A}$ can't have any spatial dependence at all. Now it becomes more clear - the same argument goes for temporal dependence, and hence $\boldsymbol{A(x, t) = \text{const}}$. We arrive at our final, most general expression for our state function (one spatial dimension aside), having applied our constraints to the fullest extent we have:
+The $\boldsymbol{v^2}$ dependence in LHS must be zero for all $\boldsymbol{u}$, hence $\boldsymbol{A}$ can't have any spatial dependence at all. Now it becomes more clear - the same argument goes for temporal dependence, and hence $\boldsymbol{A(x, t) = \text{const}}$. We can then conclude, with our constraints, our most general expression for our state function (one spatial dimension aside):
 
-$$L = \alpha v^2 + B(x, t)v + C(x, t)$$
+$$L = \alpha v^2 + B(x, t)v + C(x, t)$$.
 
 Of course, much of this is drawn on prerequisite knowledge and would've taken much longer than that relatively concise explanation. We identify the constant $\boldsymbol{\alpha}$ as one half of the mass of the body, $\boldsymbol{C(x, t)}$ as the negative of the potential energy, and $\boldsymbol{B(x, t)}$ being a term that we seemingly have not accounted for, but allegedly (from sources beyond my ken) only comes up in discussions related to magnetic fields, meaning it's not my problem to discuss here.
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Gukesh's great choke"
+title: "gukesh's great choke"
 date: 2026-04-25
 tags: [chess]
 ---

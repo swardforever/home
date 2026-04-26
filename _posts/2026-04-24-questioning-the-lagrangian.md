@@ -53,47 +53,41 @@ The equations of motion should be unchanged in all inertial reference frames acc
 
 $$x' = x - ut$$
 $$v' = v - u$$
-$$t' = t \qquad L'(x', v', t') = L(x, v, t) + \frac{dG(x, v, t;\, u)}{dt}$$
+$$t' = t \qquad L'(x', v', t')
 
-Plugging in the fact that $\boldsymbol{L}$ is just a function of $\boldsymbol{v}$, and expanding the total time derivative of $\boldsymbol{G}$, we get:
+___
+
+$$L(x, v, t) + \frac{dG(x, v, t;\, u)}{dt}$$
+
+Plugging in the fact that $\boldsymbol{L}$ is just a function of $\boldsymbol{v}$ and manipulating the total time derivative of $\boldsymbol{G}$ yields:
 
 $$L(v - u) - L(v) = v\frac{\partial G}{\partial x} + \dot{v}\frac{\partial G}{\partial v} + \frac{\partial G}{\partial t}$$
 
-LHS is only a function of $\boldsymbol{v}$, hence $\frac{\partial G}{\partial v}$ must be zero, and thus $\boldsymbol{G = G(x, t)}$. Then, we observe that RHS is at most linear in $\boldsymbol{v}$, due to the $v\frac{\partial G}{\partial x}$ term. Everything else is constant in $\boldsymbol{v}$, since $\boldsymbol{G}$ is not a function of $\boldsymbol{v}$. Thus, we get:
+LHS is only a function of $\boldsymbol{v}$, hence $\frac{\partial G}{\partial v}$ must be zero, and thus $\boldsymbol{G = G(x, t)}$. We may (or at least I was) stuck at first, but then we observe that RHS is at most linear in $\boldsymbol{v}$, due to the $v\frac{\partial G}{\partial x}$ term. Everything else is constant in $\boldsymbol{v}$, since $\boldsymbol{G}$ is not a function of $\boldsymbol{v}$. All that is to imply
 
 $$L(v - u) - L(v) = \alpha v + \beta$$
 
-Where $\boldsymbol{\alpha}$ and $\boldsymbol{\beta}$ must be constants, since LHS only depends on $\boldsymbol{v}$. This is a functional equation for $\boldsymbol{L(v)}$, whose general solution is the quadratic. Thus, we conclude that the free state function is:
+where $\boldsymbol{\alpha}$ and $\boldsymbol{\beta}$ must be constants, since LHS only depends on $\boldsymbol{v}$. Yippee, wahoo, hooray; this is a functional equation for $\boldsymbol{L(v)}$, whose general solution is the quadratic. At last, we conclude that the free state function is:
 
 $$L_{\text{free}}(v) = \alpha v^2 + \beta v + \gamma$$
 
-where the constant term $\boldsymbol{\gamma}$ is unimportant to the physics, since we only deal with derivative of the Lagrangian to determine the equations of motion.
-
-### The general Lagrangian
-
-By the same argument as above, we find that the general Lagrangian $\boldsymbol{L}$ must also be at most quadratic in $\boldsymbol{v}$ (since $\boldsymbol{G}$ is still at most linear in $\boldsymbol{v}$). This gives a general expression for $\boldsymbol{L}$ as:
+where the constant term $\boldsymbol{\gamma}$ is unimportant to the physics, since we only deal with derivative of the Lagrangian to determine the equations of motion. But now, having dealt with the baby version of our problem, we can simply extrapolate the similar ideas. By the same argument as above, we find that the general Lagrangian $\boldsymbol{L}$ must also be at most quadratic in $\boldsymbol{v}$ (since $\boldsymbol{G}$ is still at most linear in $\boldsymbol{v}$). This gives a general expression for $\boldsymbol{L}$ as:
 
 $$L(x, v, t) = A(x, t)v^2 + B(x, t)v + C(x, t)$$
 
-To further constrain the state function, we will apply our relativity constraint again. We boost the state function into an inertial frame of relativity velocity $\boldsymbol{u}$, and demand that the state function change by only a total time derivative:
+Applying our relativity constraint again will constrain our state function even more. We shift the state function into an inertial frame of relative velocity $\boldsymbol{u}$, and must also therefore demand that the state function change for only a total time derivative.
 
 $$L(x', v', t') - L(x, v, t) = \frac{dG(x, t)}{dt}$$
 
-$$[A(x, t) - A(x', t')]v^2 + [B(x', t) - B(x, t)]v + C(x', t) - C(x, t) = v\frac{\partial G}{\partial x} + \frac{\partial G}{\partial t}$$
+$$[A(x, t) - A(x', t')]v^2 + [B(x', t) - B(x, t)]v + C(x', t) - C(x, t) = v\frac{\partial G}{\partial x} + \frac{\partial G}{\partial t}$$.
 
----
-
-The $\boldsymbol{v^2}$ dependence in LHS must be zero for all $\boldsymbol{u}$, hence $\boldsymbol{A}$ can't have any spatial dependence. The same argument goes for simple time translations, and hence $\boldsymbol{A(x, t) = \text{const}}$. Thus, we arrive at our final, most general expression for our state function, having applied our constraints to the fullest extent we have:
+The $\boldsymbol{v^2}$ dependence in LHS must be zero for all $\boldsymbol{u}$, hence $\boldsymbol{A}$ can't have any spatial dependence at all. Now it becomes more clear - the same argument goes for temporal dependence, and hence $\boldsymbol{A(x, t) = \text{const}}$. We arrive at our final, most general expression for our state function (one spatial dimension aside), having applied our constraints to the fullest extent we have:
 
 $$L = \alpha v^2 + B(x, t)v + C(x, t)$$
 
-In traditional physics, we identify (for a single-body Lagrangian) the constant $\boldsymbol{\alpha}$ as one half of the mass of the body, $\boldsymbol{C(x, t)}$ as the negative of the potential energy, and $\boldsymbol{B(x, t)}$ being a term that only comes up when dealing with magnetic fields, the details of which we won't linger on here.
+Of course, much of this is drawn on prerequisite knowledge and would've taken much longer than that relatively concise explanation. We identify the constant $\boldsymbol{\alpha}$ as one half of the mass of the body, $\boldsymbol{C(x, t)}$ as the negative of the potential energy, and $\boldsymbol{B(x, t)}$ being a term that we seemingly have not accounted for, but allegedly (from sources beyond my ken) only comes up in discussions related to magnetic fields, meaning it's not my problem to discuss here.
 
-## So what?
-
-$$L = \alpha v^2 + B(x, t)v + C(x, t)$$
-
-This is the most general form of a Lagrangian that we can have, given our fairly minimal symmetry constraints at the start. It's worth noting that this is quite an exceptional amount of constraint on the Lagrangian. Before applying our conditions for certain symmetries, there was no limit to what the Lagrangian could look like. Exponentials, fraction, square roots, trigonometric functions. All of these were fair game. Turns out that we are, at least in $\boldsymbol{v}$, limited to a second-order polynomial. Of course, we're hiding some structure in our $\boldsymbol{A}$ and $\boldsymbol{B}$ functions, which currently could be arbitrary functions (although we will likely demand smoothness at some point down the line). I plan to dedicate a second post to the constraints that we can place on these functions, from further symmetry arguments.
+$$L = \alpha v^2 + B(x, t)v + C(x, t)$$ is the most general form of a Lagrangian that we can have, given our fairly minimal symmetry constraints at the start. It's worth noting that this is quite an exceptional amount of constraint on the Lagrangian. Before applying our conditions for certain symmetries, there was no limit to what the Lagrangian could look like. Exponentials, fraction, square roots, trigonometric functions. All of these were fair game. Turns out that we are, at least in $\boldsymbol{v}$, limited to a second-order polynomial. Of course, we're hiding some structure in our $\boldsymbol{A}$ and $\boldsymbol{B}$ functions, which currently could be arbitrary functions (although we will likely demand smoothness at some point down the line). I plan to dedicate a second post to the constraints that we can place on these functions, from further symmetry arguments.
 
 And so, in the absence of magnetic fields, the Lagrangian becomes:
 
@@ -106,4 +100,4 @@ $$L = T - V$$
 where $\boldsymbol{T} = \frac{1}{2}mv^2$ is the kinetic energy and $\boldsymbol{V}$ the potential energy of the body.
 ___
 
-Remark:
+Remark: unfinished article, in progress

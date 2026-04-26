@@ -12,6 +12,11 @@ layout: default
     min-height: 100vh;
   }
 
+  update();
+})();
+</script>
+  }
+
   #bg-canvas {
     position: fixed;
     inset: 0;
@@ -314,7 +319,24 @@ layout: default
           <a class="meme-link" href="{{ '/blog/' | relative_url }}">all posts &rarr;</a>
           <a class="meme-link" href="{{ '/memes/' | relative_url }}">meme vault &rarr;</a>
         </div>
-        <div class="box" style="min-height:80px;"></div>
+        <div class="box">
+  <div class="box-label">next post</div>
+  <p style="font-size:0.88rem; color:rgba(240,232,255,0.7); margin-bottom:16px;">
+    <em>reflecting on the sub 2 marathon</em> — dropping friday
+  </p>
+  <div id="countdown" style="font-size:0.78rem; color:#a855f7; letter-spacing:0.06em; font-variant-numeric:tabular-nums;"></div>
+
+  <div style="margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.07);">
+    <div class="box-label">links</div>
+    <ul class="blog-list">
+      <li><a href="https://www.feynmanlectures.caltech.edu/" target="_blank">the feynman lectures <span class="post-meta-small">— caltech</span></a></li>
+      <li><a href="https://www.youtube.com/@3blue1brown" target="_blank">3blue1brown <span class="post-meta-small">— math visuals</span></a></li>
+      <li><a href="https://plato.stanford.edu/" target="_blank">stanford encyclopedia of philosophy <span class="post-meta-small">— reference</span></a></li>
+      <li><a href="https://lichess.org/" target="_blank">lichess <span class="post-meta-small">— chess</span></a></li>
+      <li><a href="https://arxiv.org/" target="_blank">arxiv <span class="post-meta-small">— papers</span></a></li>
+    </ul>
+  </div>
+</div>
       </div>
     </div>
 

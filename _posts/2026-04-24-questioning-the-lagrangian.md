@@ -98,20 +98,7 @@ Amazing, we've seemingly proven it! But some important clarifications need to be
 
 ### Intellectual Curiosity
 
-By identifying $\boldsymbol{\alpha}$ with $\frac{1}{2}\boldsymbol{m}$, I don't mean to skip an
-important step, where we had to *show* that $\boldsymbol{\alpha}$ is in fact equal to $\frac{1}{2}\boldsymbol{m}$.
-Rather, I think it is more prudent to think of this step as the *definition of mass*. Mass, like most
-fundamental physical things, doesn't actually have a very clear physical description. When you hold a
-heavy object in your hand, that heaviness you feel is the *weight* of that object ($\boldsymbol{mg}$, on
-Earth), not the mass of the object. While we measure ourselves in kilograms, this is in fact somewhat of
-a misnomer, since our scales all measure weight, not mass. While taught in school as an intuitive physical
-property, mass is in fact more abstract than most people realize. We identify it, here in the single-body
-Lagrangian, as the one factor in the expression which depends on that body and that body alone, regardless
-of reference frame. It is the only truly *intrinsic* property that a body can have. The fact that this
-happens to be proportional to what we feel as "heaviness" in an object on Earth is a consequence of
-*gravity*, which depends on the mass, but is not a property of mass itself.
-
-Mass *is* $\boldsymbol{2\alpha}$.⁵
+By identifying $\boldsymbol{\alpha}$ with $\frac{1}{2}\boldsymbol{m}$ where we had to *show* that $\boldsymbol{\alpha}$ is in fact equal to $\frac{1}{2}\boldsymbol{m}$. I believe it is much more intuitive to think of this as the definition of mass itself. Much like motion, mass is a very difficult thing to quantify by itself. Yes, you can weigh yourself on a scale much like you can measure the velocity of a car, but many physical qualities elude definition. Try to define something like mass by itself. You'll find the dictionary definition to be relatively unsastisfactory. The fact remai that while we were all taught as middle schoolers to believe mass was a fairly easy-to-represent quality (and it is), its pure definition is much more abstract. It is the only truly *intrinsic* property that a body can have. While this is related to what we feel as "heaviness" in an object on Earth, this is merely a consequence of gravity, which is dependent but not deriving from mass itself.. Hence, mass *is* $\boldsymbol{2\alpha}$.⁵
 
 The second part of this last step was identifying $\boldsymbol{C(x, t)}$ with $-V(x, t)$, the negative
 of the potential energy. The obvious question here is, why the minus sign? Now, this one is actually just
@@ -152,4 +139,10 @@ make either object privileged in terms of "intuition" above the other.
 
 ___
 
-Remark: This is among the more technically complex posts I will make. For such posts, I will add disclaimers before convoluted sections that require high levels of context
+Remark: This is among the more technically complex posts I will make. For such posts, I will add disclaimers before convoluted sections that require high levels of context (in this case, math)
+
+However, the struggle is mainly to make posts accessible and informational for readers who know very little about the subject matter while simultaneously opening new avenues of thought and posing questions to those more experienced for the topic. To this end, I will continue to refine my post quality, although I think I've done a reasonable job here. Feel free to reach out with suggestions and viewpoints on this, particularly if you identify with one of the extremes here.
+
+To be rigorous here, you would want to show something like proving there is no dependence of the function  explicitly, but I will generally favour intuition-based arguments like these throughout, while trying my best to not sweep any important physics under the rug.
+
+Finally, a huge thanks to my friends Farren, meduh., and the help of professor Katerina C. for their insights and helping me with a lot of the math.

@@ -3,6 +3,7 @@ layout: post
 title: "gukesh's great choke"
 date: 2026-04-25
 tags: [chess]
+description: "Thoughts and predictions on the youngest world champion's decline"
 ---
 ## "The era where World Champions were the best players in the world died when Carlsen gave up his throne." - Garry Kasparov
 

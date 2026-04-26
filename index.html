@@ -341,57 +341,7 @@ layout: default
     </a>
   </nav>
   
-  <div class="scene-wrap">
-    <div class="ground-line"></div>
-    <div class="silhouette-wrap">
-      <!-- Boy: arm raised pointing up-left -->
-      <svg class="silhouette" width="55" height="190" viewBox="0 0 55 190">
-        <circle cx="27" cy="16" r="11"/>
-        <!-- short hair -->
-        <path d="M16 11 Q18 2 27 5 Q36 2 38 11"/>
-        <!-- neck -->
-        <rect x="22" y="27" width="10" height="5" rx="2"/>
-        <!-- torso -->
-        <path d="M16 32 Q13 62 15 88 L20 88 L22 66 L27 68 L32 66 L34 88 L39 88 Q41 62 38 32 Z"/>
-        <!-- left arm raised up pointing -->
-        <path d="M16 38 Q4 18 0 5" stroke="#06000f" stroke-width="7" fill="none" stroke-linecap="round"/>
-        <!-- right arm relaxed down -->
-        <path d="M38 38 Q46 56 44 70" stroke="#06000f" stroke-width="7" fill="none" stroke-linecap="round"/>
-        <!-- legs -->
-        <path d="M20 88 Q18 128 16 155" stroke="#06000f" stroke-width="8" fill="none" stroke-linecap="round"/>
-        <path d="M34 88 Q36 128 38 155" stroke="#06000f" stroke-width="8" fill="none" stroke-linecap="round"/>
-        <!-- feet -->
-        <ellipse cx="14" cy="157" rx="8" ry="3.5"/>
-        <ellipse cx="40" cy="157" rx="8" ry="3.5"/>
-      </svg>
-
-      <!-- Girl: arm raised pointing up-right, dress -->
-      <svg class="silhouette" width="58" height="190" viewBox="0 0 58 190">
-        <circle cx="29" cy="16" r="10.5"/>
-        <!-- long hair left -->
-        <path d="M18 10 Q13 28 15 52 Q19 49 21 32 L21 27"/>
-        <!-- long hair right -->
-        <path d="M40 10 Q45 28 43 52 Q39 49 37 32 L37 27"/>
-        <!-- neck -->
-        <rect x="24" y="26" width="10" height="5" rx="2"/>
-        <!-- dress body -->
-        <path d="M19 31 Q15 58 11 88 L21 88 L23 68 L29 70 L35 68 L37 88 L47 88 Q43 58 39 31 Z"/>
-        <!-- skirt -->
-        <path d="M11 88 Q8 104 6 114 L52 114 Q50 104 47 88 Z"/>
-        <!-- right arm raised pointing up -->
-        <path d="M39 38 Q50 18 55 5" stroke="#06000f" stroke-width="6" fill="none" stroke-linecap="round"/>
-        <!-- left arm relaxed -->
-        <path d="M19 38 Q12 54 13 68" stroke="#06000f" stroke-width="6" fill="none" stroke-linecap="round"/>
-        <!-- legs -->
-        <path d="M21 114 Q20 140 19 157" stroke="#06000f" stroke-width="7" fill="none" stroke-linecap="round"/>
-        <path d="M37 114 Q38 140 39 157" stroke="#06000f" stroke-width="7" fill="none" stroke-linecap="round"/>
-        <!-- feet -->
-        <ellipse cx="17" cy="159" rx="8" ry="3.5"/>
-        <ellipse cx="41" cy="159" rx="8" ry="3.5"/>
-      </svg>
-    </div>
-  </div>
-</div>
+  <img src="{{ '/assets/silhouette.png' | relative_url }}" style="height:200px; filter: brightness(0) invert(1);">
 
 <script>
 (function() {
@@ -409,7 +359,6 @@ layout: default
     stars = [];
     for (let i = 0; i < 110; i++) {
       const t = Math.random();
-      // Power curve: concentrates stars toward top
       const y = H * Math.pow(t, 2.5) * 0.72;
       stars.push({
         x: Math.random() * W,
@@ -450,7 +399,6 @@ layout: default
       const steps = 100;
       const pulse = 0.10 + 0.06 * Math.sin(t * 0.6 + rb.ph);
 
-      // Build top and bottom edge points
       const top = [], bot = [];
       for (let i = 0; i <= steps; i++) {
         const x = (i / steps) * W;

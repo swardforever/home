@@ -3,7 +3,7 @@ layout: post
 title: "questioning the lagrangian"
 date: 2026-04-24
 tags: [physics]
-description: "A generalized proof of why the Lagrangian must equal T-V, and an accompanying rant about physical intrinsic properties"
+description: "a generalized proof of why the Lagrangian must equal T-V, and an accompanying rant about physical intrinsic properties"
 ---
 
 ## "I don't know anything, but I do know that everything is interesting if you go into it deeply enough." - Richard Feynman
@@ -98,44 +98,25 @@ Amazing, we've seemingly proven it! But some important clarifications need to be
 
 ### Intellectual Curiosity
 
-By identifying $\boldsymbol{\alpha}$ with $\frac{1}{2}\boldsymbol{m}$ where we had to *show* that $\boldsymbol{\alpha}$ is in fact equal to $\frac{1}{2}\boldsymbol{m}$. I believe it is much more intuitive to think of this as the definition of mass itself. Much like motion, mass is a very difficult thing to quantify by itself. Yes, you can weigh yourself on a scale much like you can measure the velocity of a car, but many physical qualities elude definition. Try to define something like mass by itself. You'll find the dictionary definition to be relatively unsastisfactory. The fact remai that while we were all taught as middle schoolers to believe mass was a fairly easy-to-represent quality (and it is), its pure definition is much more abstract. It is the only truly *intrinsic* property that a body can have. While this is related to what we feel as "heaviness" in an object on Earth, this is merely a consequence of gravity, which is dependent but not deriving from mass itself.. Hence, mass *is* $\boldsymbol{2\alpha}$.⁵
+By identifying $\boldsymbol{\alpha}$ with $\frac{1}{2}\boldsymbol{m}$ where we had to *show* that $\boldsymbol{\alpha}$ is in fact equal to $\frac{1}{2}\boldsymbol{m}$. I believe it is much more intuitive to think of this as the definition of mass itself. Much like motion, mass is a very difficult thing to quantify by itself. Yes, you can weigh yourself on a scale much like you can measure the velocity of a car, but many physical qualities elude definition. Try to define something like mass by itself. You'll find the dictionary definition to be relatively unsastisfactory. The fact remai that while we were all taught as middle schoolers to believe mass was a fairly easy-to-represent quality (and it is), its pure definition is much more abstract. It is the only truly *intrinsic* property that a body can have. While this is related to what we feel as "heaviness" in an object on Earth, this is merely a consequence of gravity, which is dependent but not deriving from mass itself. Hence, mass *is* $\boldsymbol{2\alpha}$.⁵
 
-The second part of this last step was identifying $\boldsymbol{C(x, t)}$ with $-V(x, t)$, the negative
-of the potential energy. The obvious question here is, why the minus sign? Now, this one is actually just
-arbitrary, but is the cause of much confusion (to myself). A most common objection to the Lagrangian
-voiced by first-year university students (again, myself included) is: why the minus sign in front of the
-potential energy? Most students will, by the time they enter university, have deeply internalized that
-total energy $\boldsymbol{E = T + V}$, is a profound and important quantity in physics. Safe to say, the
-Lagrangian would cause much less confusion if it happened to equal $\boldsymbol{T + V}$, the energy.
-"I've seen that before, only makes sense that that's what it would be!", students would say. But this
-would be poor judgment. The problem, rather, is one of selective skepticism.
+Another common point of interest about the Lagrangian I had was the minus sign in front of the potential energy. The second part of this last step was identifying $\boldsymbol{C(x, t)}$ with $-V(x, t)$, the negative of the potential energy. Most physics students will have deeply internalized that total energy $\boldsymbol{E = T + V}$ is among the most important qualities and is practically intrinsic to them. Moreover, it just makes sense! It seems fairly logical, then, to concede that the Lagrangian would be much less scrutinized if it were to equal $\boldsymbol{T + V}$. Through this intrinsic argument, you could go on to say that this too, would make sense. But really, just because something makes sense doesn't inhibit the liberty to question why that is so. So why is the Lagrangian put under the hot seat so much relative to energy, which should in reality be equally questioned?
 
-Most people are taught the definition of energy (and the fact of its conservation) in middle school,
-where it is written up on the board and stated as fact. Few people think to question this definition (I,
-perhaps rather embarrassingly, certainly didn't). Why the $\boldsymbol{v^2}$? Why the $+\boldsymbol{V}$
-instead of the $-\boldsymbol{V}$? And even those who do question, likely give up after a short while and
-submit to internalizing the definition of energy as fact, and over time come to think of it as a deeply
-physical truth. But there is nothing intuitively physical about energy! Sure, it certainly is physical,
-in the sense that we use it in physics (same as mass). But can you tell me what it looks like? Can you
-tell me what it feels like? When I first learned Lagrangian mechanics, I used to love asking people for
-their "physical intuition for the Lagrangian", which is a fair, but difficult question. But never once
-did I stop to ask anyone what the physical intuition of energy is, an equally hard, but fair, question!
-Students enter their first analytical mechanics course with an unjustified acceptance of energy, and begin
-harassing its close cousin, the Lagrangian, as if it all of a sudden now has to prove itself. We could
-just as well have flipped signs on our definition of potential energy (which wouldn't be particularly
-unintuitive, because again, the intuition for potential energy isn't quite as deep or rigid as we might
-think), and thus defined energy as $\boldsymbol{T - V}$, and the Lagrangian and $\boldsymbol{T + V}$.
-Would you be happier with this?
+The answer is relatively straightforward; most people are taught the definition of energy and its conservation in middle school, where one's science teacher introduced you to the principle and told you to memorize it and internalize it. Few people think to question this definition (none of my peers as well as myself who worked on this did, which reflects admittedly rather poorly on our character). Why the $\boldsymbol{v^2}$? Why the $+\boldsymbol{V}$ instead of the $-\boldsymbol{V}$? Even though the latter makes logical sense, there are many things in this universe that do not, and yet still remain true. However, it is likely that even those who do have such thoughts never voice them, and those who do voice them are never fully answered and instead give in to simply accepting subconsciously, that they will never know. But, much like the Lagrangian and really many qualities in physics, there is nothing intuitively physical about energy! You cannot easily envision energy, just as you cannot easily envision mass or motion. Picture how energy would feel like, would look like, what it would taste like (I imagine something horribly acidic). Like me, many students enter their first analytical mechanics course with an unjustified, practically submissive acceptance of energy, and begin harassing its close cousin, the Lagrangian, simply due to the more 'true' nature of energy. We could have easily defined energy as $\boldsymbol{T - V}$ and the Lagrangian as $\boldsymbol{T + V}$. Doesn't that seem nonintuitve or 'elementary' to disprove because it violates common sense? But to what end is this true? We know, through rigorous proof, that the laws of physics dictate energy and the Lagrangian to be $\boldsymbol{T + V}$ and $\boldsymbol{T - V}$ respectively, but it was thanks to the rigorous proof that we are able to accept such definitions blindly in the first place.
 
-So, the real question becomes, well why is energy different from the Lagrangian by a sign change on the
-potential energy, $\boldsymbol{V}$? My best answer to that is that the sign change occurs as you apply
-Noether's theorem to find the energy as the conserved quantity arising from time translational symmetry,
-and that there isn't any obvious physical intuition for why the signs should differ. It's "just" an
-algebraic remnant, the "physical understanding" of which won't be particularly useful. But this is of
-course an unsatisfying answer, and I would be happy to hear better ones! But if you do go looking for
-better ones, remember to be fair, and if I may say, *symmetric*, in your scrutiny. While you may find a
-physical intuition for why the Lagrangian differs from the energy by the flip of a sign, that doesn't
-make either object privileged in terms of "intuition" above the other.
+With this, we must return to the concept of not simply accepting things for the way they are. As the world stagnates in the information bubble, it becomes ever more important for intellectual curiosity, the desire to know more, to seek more, to find the reason behind things, to take hold instead of brain-leaching apathy. But then, it would be quite hypocritical to defame such practices without practicing such lucid behaviors myself! 
+
+So, the real question becomes, why is energy different from the Lagrangian by a sign change on the potential energy $\boldsymbol{V}$? And to that, I was lost. It was the source of much confusion, but a peer suggested upon my inquiry of this matter that it would occur as one applies [Noether's theorem](https://en.wikipedia.org/wiki/Noether%27s_theorem); when you derive energy as the conserved quantity associated with time-translation symmetry, the algebra naturally produces that sign difference. There is no clear, known (to my knowledge) physical intuition of why the signs do in fact differ other than "because the principle of least action forces it to be so". In Lagrangian mechanics, the actual path a system takes is the one that makes the action stationary. If you try $L = T - V$ and plug it into the Euler–Lagrange equations, one would recover a form of Newton's law
+
+$$m\ddot{x} = -\nabla V$$.
+
+If instead you used $L = T + V$, the same machinery would give
+
+$$m\ddot{x} = +\nabla V,$$
+
+which would imply that particles would accelerate up the potential hill. For ordinary systems, this is impossible. All this is to say that the sign in $L = T - V$ is what ensures the variational principle produces the correct direction of forces. From this we can derive through Noether's theorem as mentioned and see that the sign is a consequence of how energy is constructed from the Lagrangian itself. It is simply but an algebraic property and wouldn't be useful in physical contexts.
+
+That may feel like an unsatisfying answer, and for that reason, I'd be quite happy to recieve a better one. But for that matter, I've decided to let it go. After all, neither energy nor the Lagrangian has a monopoly on “intuition.” They are distinct and perhaps should I say, symmetric! If one seems more natural, it is rather because we encountered it earlier and questioned it less than some false property of reality.
 
 ___
 

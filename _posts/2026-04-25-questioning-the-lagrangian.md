@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "questioning the lagrangian"
-date: 2026-04-24
+date: 2026-04-25
 tags: [physics]
 description: "a generalized proof of why the Lagrangian must equal T-V, and an accompanying rant about intrinsic properties and intellectual curiosity"
 ---

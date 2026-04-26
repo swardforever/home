@@ -3,7 +3,7 @@ layout: post
 title: "questioning the lagrangian"
 date: 2026-04-24
 tags: [physics]
-description: "A proof-based exploration of why the Lagrangian must equal T-V, derived from symmetry principles alone."
+description: "A generalized proof of why the Lagrangian must equal T-V, and an accompanying rant about physical intrinsic properties"
 ---
 
 ## "I don't know anything, but I do know that everything is interesting if you go into it deeply enough." - Richard Feynman

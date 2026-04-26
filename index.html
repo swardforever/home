@@ -12,11 +12,6 @@ layout: default
     min-height: 100vh;
   }
 
-  update();
-})();
-</script>
-  }
-
   #bg-canvas {
     position: fixed;
     inset: 0;
@@ -480,5 +475,26 @@ layout: default
   window.addEventListener('resize', resize);
   resize();
   requestAnimationFrame(loop);
+  <script>
+  (function() {
+    const target = new Date('2026-05-02T00:00:00');
+    function update() {
+      const now = new Date();
+      const diff = target - now;
+      if (diff <= 0) {
+      document.getElementById('countdown').textContent = 'post is live!';
+      return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('countdown').textContent =
+        `${d}d ${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s`;
+      setTimeout(update, 1000);
+    }
+  update();
+})();
+</script>
 })();
 </script>

@@ -226,7 +226,7 @@ layout: default
     gap: 24px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 
   .socials a {
@@ -252,8 +252,8 @@ layout: default
   .site-heading    { animation-delay: 0.05s; }
   .site-subheading { animation-delay: 0.18s; }
   .boxes-outer     { animation-delay: 0.32s; }
-  .scene-wrap      { animation-delay: 0.44s; }
-  .socials         { animation-delay: 0.52s; }
+  .socials         { animation-delay: 0.40s; }
+  .scene-wrap      { animation-delay: 0.48s; }
 
   @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
 
@@ -279,6 +279,7 @@ layout: default
     </div>
 
     <div class="boxes-wrapper">
+      <!-- Left box: Bio -->
       <div class="box">
         <div class="box-label">about</div>
         <p>welcome to my social landing platform! im warren zha, a sophomore in high school.
@@ -292,10 +293,11 @@ layout: default
         <p>while i do participate in comp math, i really never integrated myself into the scene; hence my ceiling
         is probably a 10 mohs, which is coincidentally my highest aime score lol</p>
         <p>i think making enemies is a waste of time, so don't make enemies out of others and don't become an
-        enemy to others yourself <3</p>
+        enemy to others yourself &lt;3</p>
         <p>to contact me, my socials are below! feel free to reach out to chat; i'm always looking for new impressions.</p>
       </div>
 
+      <!-- Right column -->
       <div style="display:flex;flex-direction:column;gap:20px;">
         <div class="box">
           <div class="box-label">recent posts</div>
@@ -314,24 +316,25 @@ layout: default
           <a class="meme-link" href="{{ '/blog/' | relative_url }}">all posts &rarr;</a>
           <a class="meme-link" href="{{ '/memes/' | relative_url }}">meme vault &rarr;</a>
         </div>
-        <div class="box">
-  <div class="box-label">next post</div>
-  <p style="font-size:0.88rem; color:rgba(240,232,255,0.7); margin-bottom:16px;">
-    <em>reflecting on the sub 2 marathon</em> — dropping friday
-  </p>
-  <div id="countdown" style="font-size:0.78rem; color:#a855f7; letter-spacing:0.06em; font-variant-numeric:tabular-nums;"></div>
 
-  <div style="margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.07);">
-    <div class="box-label">links</div>
-    <ul class="blog-list">
-      <li><a href="https://www.feynmanlectures.caltech.edu/" target="_blank">the feynman lectures <span class="post-meta-small">— caltech</span></a></li>
-      <li><a href="https://www.youtube.com/@3blue1brown" target="_blank">3blue1brown <span class="post-meta-small">— math visuals</span></a></li>
-      <li><a href="https://plato.stanford.edu/" target="_blank">stanford encyclopedia of philosophy <span class="post-meta-small">— reference</span></a></li>
-      <li><a href="https://lichess.org/" target="_blank">lichess <span class="post-meta-small">— chess</span></a></li>
-      <li><a href="https://arxiv.org/" target="_blank">arxiv <span class="post-meta-small">— papers</span></a></li>
-    </ul>
-  </div>
-</div>
+        <div class="box">
+          <div class="box-label">next post</div>
+          <p style="font-size:0.88rem; color:rgba(240,232,255,0.7); margin-bottom:16px;">
+            <em>reflecting on the sub 2 marathon</em> — dropping friday
+          </p>
+          <div id="countdown" style="font-size:0.78rem; color:#a855f7; letter-spacing:0.06em; font-variant-numeric:tabular-nums;"></div>
+
+          <div style="margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.07);">
+            <div class="box-label">links</div>
+            <ul class="blog-list">
+              <li><a href="https://www.feynmanlectures.caltech.edu/" target="_blank">the feynman lectures <span class="post-meta-small">— caltech</span></a></li>
+              <li><a href="https://www.youtube.com/@3blue1brown" target="_blank">3blue1brown <span class="post-meta-small">— math visuals</span></a></li>
+              <li><a href="https://plato.stanford.edu/" target="_blank">stanford encyclopedia of philosophy <span class="post-meta-small">— reference</span></a></li>
+              <li><a href="https://lichess.org/" target="_blank">lichess <span class="post-meta-small">— chess</span></a></li>
+              <li><a href="https://arxiv.org/" target="_blank">arxiv <span class="post-meta-small">— papers</span></a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -357,9 +360,18 @@ layout: default
       twitter
     </a>
   </nav>
-  
-  <img src="{{ '/assets/silhouette.png' | relative_url }}" style="height:200px; filter: brightness(0) invert(1);">
 
+  <!-- Silhouette scene -->
+  <div class="scene-wrap">
+    <div class="ground-line"></div>
+    <div class="silhouette-wrap">
+      <img src="{{ '/assets/silhouette.png' | relative_url }}" style="height:200px; filter: brightness(0) invert(1);">
+    </div>
+  </div>
+
+</div>
+
+<!-- Canvas background: stars, aurora, gradient -->
 <script>
 (function() {
   const canvas = document.getElementById('bg-canvas');
@@ -393,9 +405,9 @@ layout: default
     grad.addColorStop(0,    '#020008');
     grad.addColorStop(0.30, '#060012');
     grad.addColorStop(0.55, '#100025');
-    grad.addColorStop(0.75, '#280050');
-    grad.addColorStop(0.90, '#4a0090');
-    grad.addColorStop(1,    '#7c28c8');
+    grad.addColorStop(0.75, '#320065');
+    grad.addColorStop(0.90, '#6a00c0');
+    grad.addColorStop(1,    '#b44fff');
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, W, H);
   }
@@ -415,14 +427,14 @@ layout: default
       const thick = H * rb.thick;
       const steps = 100;
       const pulse = 0.10 + 0.06 * Math.sin(t * 0.6 + rb.ph);
-
       const top = [], bot = [];
+
       for (let i = 0; i <= steps; i++) {
         const x = (i / steps) * W;
         const wave = Math.sin(i / steps * Math.PI * 2.2 * rb.freq + t * 0.45 + rb.ph)
                    + 0.35 * Math.sin(i / steps * Math.PI * 3.5 * rb.freq + t * 0.28);
         const y = yMid + wave * H * rb.amp;
-        const taper = Math.sin((i / steps) * Math.PI); // fade at left/right edges
+        const taper = Math.sin((i / steps) * Math.PI);
         top.push({ x, y: y - thick * 0.1 });
         bot.push({ x, y: y + thick * taper });
       }
@@ -436,12 +448,11 @@ layout: default
 
       const [r, g, b] = rb.color;
       const grad = ctx.createLinearGradient(0, yMid - thick, 0, yMid + thick);
-      grad.addColorStop(0,    '#020008');
-      grad.addColorStop(0.30, '#060012');
-      grad.addColorStop(0.55, '#100025');
-      grad.addColorStop(0.75, '#320065');
-      grad.addColorStop(0.90, '#6a00c0');
-      grad.addColorStop(1,    '#b44fff');
+      grad.addColorStop(0,   `rgba(${r},${g},${b},0)`);
+      grad.addColorStop(0.3, `rgba(${r},${g},${b},${pulse})`);
+      grad.addColorStop(0.5, `rgba(${r},${g},${b},${pulse * 1.5})`);
+      grad.addColorStop(0.7, `rgba(${r},${g},${b},${pulse})`);
+      grad.addColorStop(1,   `rgba(${r},${g},${b},0)`);
       ctx.fillStyle = grad;
       ctx.filter = 'blur(7px)';
       ctx.fill();
@@ -475,26 +486,28 @@ layout: default
   window.addEventListener('resize', resize);
   resize();
   requestAnimationFrame(loop);
-  <script>
-  (function() {
-    const target = new Date('2026-05-02T00:00:00');
-    function update() {
-      const now = new Date();
-      const diff = target - now;
-      if (diff <= 0) {
-      document.getElementById('countdown').textContent = 'post is live!';
-      return;
-      }
-      const d = Math.floor(diff / 86400000);
-      const h = Math.floor((diff % 86400000) / 3600000);
-      const m = Math.floor((diff % 3600000) / 60000);
-      const s = Math.floor((diff % 60000) / 1000);
-      document.getElementById('countdown').textContent =
-        `${d}d ${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s`;
-      setTimeout(update, 1000);
-    }
-  update();
 })();
 </script>
+
+<!-- Countdown timer -->
+<script>
+(function() {
+  const target = new Date('2026-05-02T00:00:00');
+  function update() {
+    const now = new Date();
+    const diff = target - now;
+    if (diff <= 0) {
+      document.getElementById('countdown').textContent = 'post is live!';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('countdown').textContent =
+      `${d}d ${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s`;
+    setTimeout(update, 1000);
+  }
+  update();
 })();
 </script>

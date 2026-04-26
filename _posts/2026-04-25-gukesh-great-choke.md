@@ -32,4 +32,6 @@ Remark: This is my first blog post! This is generally shorter than many of the t
 
 - I certainly hope to cover what I find to be more interesting topics that I can cover in more depth (relating to chess at least), such as the future of engine use and preparation quality, or Fischer's legacy and brilliancy. It is difficult to discuss chess without looking at the past, but I will try my best to create novelties regarding these topics. Good news is many of the other topics I write about on this blog are far more lucrative when it comes to being able to generate original or interesting thought - if you're interested and have time to spare, go check it out!
 
+- [This very amusing video](https://www.youtube.com/watch?v=d1qX-ZBpgEE) on Gukesh winning the Candidates for hardcore chess fans
+
 - If you're from the distant future, thanks for coming all the way back to the start of my little inconsequential piece of the internet!

@@ -19,6 +19,9 @@ title: blog
             {% endfor %}
           {% endif %}
         </span>
+        {% if post.description %}
+        <span class="card-description">{{ post.description }}</span>
+      {% endif %}
       </a>
     </li>
   {% endfor %}

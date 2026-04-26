@@ -475,11 +475,12 @@ layout: default
 
       const [r, g, b] = rb.color;
       const grad = ctx.createLinearGradient(0, yMid - thick, 0, yMid + thick);
-      grad.addColorStop(0,   `rgba(${r},${g},${b},0)`);
-      grad.addColorStop(0.3, `rgba(${r},${g},${b},${pulse})`);
-      grad.addColorStop(0.5, `rgba(${r},${g},${b},${pulse * 1.5})`);
-      grad.addColorStop(0.7, `rgba(${r},${g},${b},${pulse})`);
-      grad.addColorStop(1,   `rgba(${r},${g},${b},0)`);
+      grad.addColorStop(0,    '#020008');
+      grad.addColorStop(0.30, '#060012');
+      grad.addColorStop(0.55, '#100025');
+      grad.addColorStop(0.75, '#320065');
+      grad.addColorStop(0.90, '#6a00c0');
+      grad.addColorStop(1,    '#b44fff');
       ctx.fillStyle = grad;
       ctx.filter = 'blur(7px)';
       ctx.fill();

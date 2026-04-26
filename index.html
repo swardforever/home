@@ -279,25 +279,29 @@ layout: default
       </div>
     </div>
     
-    <div class="box">
-      <div class="box-label">recent posts</div>
-      <ul class="blog-list">
-        {% for post in site.posts limit:8 %}
-        <li>
-          <a href="{{ post.url | relative_url }}">
-            <span>{{ post.title }}</span>
-            <span class="post-meta-small">
-              {{ post.date | date: "%b %Y" }}{% if post.tags %} &middot; {{ post.tags | first }}{% endif %}
-            </span>
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-      <a class="meme-link" href="{{ '/blog/' | relative_url }}">all posts &rarr;</a>
-      <a class="meme-link" href="{{ '/memes/' | relative_url }}">meme vault &rarr;</a>
-    </div>
-
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+  <div class="box">
+    <div class="box-label">recent posts</div>
+    <ul class="blog-list">
+      {% for post in site.posts limit:5 %}
+      <li>
+        <a href="{{ post.url | relative_url }}">
+          <span>{{ post.title }}</span>
+          <span class="post-meta-small">
+            {{ post.date | date: "%b %Y" }}{% if post.tags %} &middot; {{ post.tags | first }}{% endif %}
+          </span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    <a class="meme-link" href="{{ '/blog/' | relative_url }}">all posts &rarr;</a>
+    <a class="meme-link" href="{{ '/memes/' | relative_url }}">meme vault &rarr;</a>
   </div>
+
+  <div class="box">
+    
+  </div>
+</div>
 
   <nav class="socials">
     <a href="https://discord.gg/VmQM4AFC">

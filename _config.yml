@@ -4,6 +4,8 @@ baseurl: "/home"
 url: "https://swardforever.github.io"
 
 markdown: kramdown
+kramdown:
+  math engine: null
 permalink: /blog/:year/:month/:day/:title/
 
 exclude:

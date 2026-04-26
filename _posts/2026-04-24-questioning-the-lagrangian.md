@@ -3,7 +3,7 @@ layout: post
 title: "questioning the lagrangian"
 date: 2026-04-24
 tags: [physics]
-description: "a generalized proof of why the Lagrangian must equal T-V, and an accompanying rant about physical intrinsic properties"
+description: "a generalized proof of why the Lagrangian must equal T-V, and an accompanying rant about intrinsic properties and intellectual curiosity"
 ---
 
 ## "I don't know anything, but I do know that everything is interesting if you go into it deeply enough." - Richard Feynman

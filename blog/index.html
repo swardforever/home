@@ -141,7 +141,7 @@ title: blog
 
 <ul class="post-list">
   {% for post in site.posts %}
-    <li class="post-card" data-tags="{{ post.tags | join: ',' }}">
+    <li class="post-card">
       <a href="{{ post.url | relative_url }}">
         <span class="card-title">{{ post.title }}</span>
         <span class="card-meta">
@@ -152,6 +152,10 @@ title: blog
             {% endfor %}
           {% endif %}
         </span>
+        {% if post.description %}
+        <span class="card-description">{{ post.description }}</span>
+      {% endif %}
+      <span class="card-wordcount">{{ post.content | number_of_words }} words</span>
       </a>
     </li>
   {% endfor %}

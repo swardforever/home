@@ -54,11 +54,9 @@ The equations of motion should be unchanged in all inertial reference frames acc
 
 $$x' = x - ut$$
 $$v' = v - u$$
-$$t' = t \qquad L'(x', v', t')$$
+$$t' = t$$
 
-___
-
-$$L(x, v, t) + \frac{dG(x, v, t;\, u)}{dt}$$
+$$L'(x', v', t') = L(x, v, t) + \frac{dG(x, v, t;\, u)}{dt}$$
 
 Plugging in the fact that $\boldsymbol{L}$ is just a function of $\boldsymbol{v}$ and manipulating the total time derivative of $\boldsymbol{G}$ yields:
 

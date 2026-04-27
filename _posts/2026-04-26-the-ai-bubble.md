@@ -6,7 +6,7 @@ tags: [life]
 description: "a rabbit hole about the spread and usage of ai"
 ---
 
-## "You lied to me earlier, didn't you? Which means you sometimes lie. Which means that it's at least plausible that when you say you're not conscious you could be lying..." - Alex O'Connor
+## “The danger of AI is not that it will become self-aware, but that it will obey our commands without question.” - Max Tegmark
 
 The advent of AI was quite inevitable. The hallmark of human laziness can be seen everywhere, from the way we speak mathematical language to text shorthand. We masquerade such laziness as efficiency, and in many cases, it was. But pivotal inventions such as the telephone were made because people felt that it was inefficient to communicate by paper messages, the modern washing machine because 20th century housewives didn't want to labor on clotheslines for hours, the list goes on. While all of these landmark inventions do indeed provide a clear gap in efficiency pre and post invention and dramatically increase living quality while decreasing the time it takes to do things, all of these things can pessimistically be said to stem from a natural human laziness. Nowadays in the 21st century, such mentalities of efficiency have been monopolized and corrupted by 'big corp', the alleged circus masters that control our technology. We, as the puppets in this admittedly rather flimsy analogy, are, by proxy or directly, affected by the increasing role technology plays in our lives.
 

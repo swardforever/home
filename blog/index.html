@@ -4,28 +4,144 @@ title: blog
 ---
 
 <style>
-  .card-description {
-    font-size: 0.82rem;
-    color: rgba(240, 232, 255, 0.45);
-    line-height: 1.6;
-    margin-top: 4px;
-    font-weight: 300;
+  .blog-index-heading {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #fff;
+    text-shadow: 0 0 60px rgba(168,85,247,0.5);
+    margin-bottom: 8px;
   }
-  .card-wordcount {
+
+  .blog-index-sub {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  .tag-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .tag-btn {
+    background: transparent;
+    border: 1px solid rgba(168,85,247,0.35);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 0.75rem;
+    font-family: inherit;
+    color: rgba(240,232,255,0.6);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    letter-spacing: 0.04em;
+  }
+
+  .tag-btn:hover {
+    background: rgba(168,85,247,0.12);
+    border-color: rgba(168,85,247,0.6);
+    color: #fff;
+  }
+
+  .tag-btn.active {
+    background: rgba(168,85,247,0.25);
+    border-color: #a855f7;
+    color: #fff;
+  }
+
+  .post-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .post-card {
+    background: rgba(10,5,20,0.75);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(255,255,255,0.75);
+    border-radius: 14px;
+    padding: 22px 26px;
+    transition: border-color 0.3s, box-shadow 0.3s, opacity 0.3s;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  .post-card.hidden {
+    display: none;
+  }
+
+  .post-card:hover {
+    border-color: rgba(168,85,247,0.7);
+    box-shadow: 0 0 28px rgba(168,85,247,0.12);
+  }
+
+  .post-card a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(240,232,255,0.92);
+    transition: color 0.2s;
+  }
+
+  .post-card:hover .card-title { color: #fff; }
+
+  .card-meta {
     font-size: 0.72rem;
-    color: rgba(255, 255, 255, 0.2);
-    margin-top: 2px;
-    font-weight: 300;
-    letter-spacing: 0.03em;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.04em;
+    display: flex;
+    gap: 10px;
+    align-items: center;
   }
+
+  .tag {
+    background: rgba(168,85,247,0.15);
+    border: 1px solid rgba(168,85,247,0.3);
+    border-radius: 4px;
+    padding: 1px 7px;
+    font-size: 0.68rem;
+    color: #a855f7;
+  }
+
+  .no-results {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.3);
+    font-style: italic;
+    display: none;
+    margin-top: 8px;
+  }
+
+  @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
 </style>
 
 <h1 class="blog-index-heading">blog</h1>
 <p class="blog-index-sub">anything that strikes my fancy</p>
 
+<div class="tag-filters">
+  <button class="tag-btn active" data-tag="all">all</button>
+  {% assign all_tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
+  {% for tag in all_tags %}
+    <button class="tag-btn" data-tag="{{ tag | strip }}">{{ tag | strip }}</button>
+  {% endfor %}
+</div>
+
+<p class="no-results" id="no-results">no posts found for this tag.</p>
+
 <ul class="post-list">
   {% for post in site.posts %}
-    <li class="post-card">
+    <li class="post-card" data-tags="{{ post.tags | join: ',' }}">
       <a href="{{ post.url | relative_url }}">
         <span class="card-title">{{ post.title }}</span>
         <span class="card-meta">
@@ -36,11 +152,37 @@ title: blog
             {% endfor %}
           {% endif %}
         </span>
-        {% if post.description %}
-        <span class="card-description">{{ post.description }}</span>
-      {% endif %}
-      <span class="card-wordcount">{{ post.content | number_of_words }} words</span>
       </a>
     </li>
   {% endfor %}
 </ul>
+
+<script>
+(function() {
+  const buttons = document.querySelectorAll('.tag-btn');
+  const cards   = document.querySelectorAll('.post-card');
+  const noResults = document.getElementById('no-results');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tag = btn.dataset.tag;
+
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      let visible = 0;
+      cards.forEach(card => {
+        const tags = card.dataset.tags.split(',').map(t => t.trim());
+        if (tag === 'all' || tags.includes(tag)) {
+          card.classList.remove('hidden');
+          visible++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+    });
+  });
+})();
+</script>

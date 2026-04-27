@@ -46,7 +46,7 @@ It is important to emphasize that going forward, we know nothing else about what
 
 As with all complex problems, let's begin with a simpler one as a stepping stone to our rather scary task of tackling a general form of the Lagrangian:
 
-The homogeneity of free space implies that there is no real dependence of the function $\boldsymbol{L}$, when we're in free space. Otherwise, since the Lagrangian determines the equations of motion, we would get different equations of motion at different points in space and time⁴. Hence:
+The homogeneity of free space implies that there is no real dependence of the function $\boldsymbol{L}$, when we're in free space. Otherwise, since the Lagrangian determines the equations of motion, we would get different equations of motion at different points in space and time. Hence:
 
 $$L(x, v, t) = L(v)$$
 

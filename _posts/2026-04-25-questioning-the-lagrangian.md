@@ -122,7 +122,7 @@ ___
 
 Remark: This is among the more technically complex posts I will make. For such posts, I will add disclaimers before convoluted sections that require high levels of context (in this case, math)
 
-However, the struggle is mainly to make posts accessible and informational for readers who know very little about the subject matter while simultaneously opening new avenues of thought and posing questions to those more experienced for the topic. To this end, I will continue to refine my post quality, although I think I've done a reasonable job here. Feel free to reach out with suggestions and viewpoints on this, particularly if you identify with one of the extremes here.
+However, the struggle is mainly to make posts accessible and informational for readers who know very little about the subject matter while simultaneously opening new avenues of thought and posing questions to those more experienced on the topic. To this end, I will continue to refine my post quality, although I think I've done a reasonable job here. Feel free to reach out with suggestions and viewpoints on this, particularly if you identify with one of the extremes here.
 
 To be rigorous here, you would want to show something like proving there is no dependence of the function  explicitly, but I will generally favour intuition-based arguments like these throughout, while trying my best to not sweep any important physics under the rug.
 

@@ -94,7 +94,6 @@
 
     .nav-link:hover { color: rgba(255,255,255,0.6); }
 
-    /* ── Page content ── */
     .page-content {
       position: relative;
       z-index: 1;
@@ -102,7 +101,6 @@
       margin: 0 auto;
     }
 
-    /* ── Blog index ── */
     .blog-index-heading {
       font-size: clamp(2rem, 6vw, 3.5rem);
       font-weight: 700;
@@ -184,7 +182,6 @@
       color: var(--purple-light);
     }
 
-    /* ── Individual post ── */
     .post { max-width: 680px; }
 
     .post-header { margin-bottom: 40px; }
@@ -289,10 +286,7 @@
       margin: 2.5em 0;
     }
 
-    /* ── Animation ── */
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-
-    /* ── Responsive ── */
     @media (max-width: 640px) {
       .post { max-width: 100%; }
     }
@@ -345,7 +339,7 @@
     for (let i = 0; i < count; i++) {
       const angle = (Math.PI * 2 * i) / count + Math.random() * 0.3;
       const speed = 1.5 + Math.random() * 3.5;
-      const hue = 270 + Math.random() * 60; // purple to pink range
+      const hue = 270 + Math.random() * 60;
       particles.push({
         x, y,
         vx: Math.cos(angle) * speed,
@@ -366,8 +360,8 @@
       const p = particles[i];
       p.x  += p.vx;
       p.y  += p.vy;
-      p.vy += 0.07; // gravity
-      p.vx *= 0.97; // drag
+      p.vy += 0.07;
+      p.vx *= 0.97;
       p.alpha -= p.decay;
       if (p.alpha <= 0) { particles.splice(i, 1); continue; }
       ctx.beginPath();

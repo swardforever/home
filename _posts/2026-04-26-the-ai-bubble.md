@@ -30,6 +30,6 @@ Remark: I actually find a lot of points that I stated in this post to be interes
 
 - I found [this post](https://www.darioamodei.com/essay/machines-of-loving-grace) to do a much better job than I did at expressing good things about AI, although of course my discourse was not meant to do entirely that
 
-- I feel like I veered off course a little in this one, but that's what one should come to expect from a post labeled under the 'life' category: just a senseless mass of word vomit
+- I feel like I veered off course a little in this one, but that's what one should come to expect from a post labeled under the 'life' category: just a senseless mass of word vomit :D
 
 - Lastly, credit to satuurn__ for helping me edit this post and inspire creations for the blog as a whole!

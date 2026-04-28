@@ -88,17 +88,15 @@ layout: default
 
 <script>
 (function() {
-  const SUPABASE_URL = 'https://yourproject.supabase.co';
-  const SUPABASE_KEY = 'your-anon-key';
+  const SUPABASE_URL = 'https://kubmqwqsrjyzohuuzlqp.supabase.co/rest/v1/';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt1Ym1xd3Fzcmp5em9odXV6bHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMzAzMTYsImV4cCI6MjA5MjkwNjMxNn0.U79OyoU7YbKUBHRWJkvwaWPdXzVCDZfPpYFvxPQeu8o';
   const slug = window.location.pathname;
   const storageKey = 'kudos_given_' + slug;
 
-  // Check if already clicked
   if (localStorage.getItem(storageKey)) {
     document.getElementById('kudos-btn').classList.add('clicked');
   }
 
-  // Load current count
   fetch(`${SUPABASE_URL}/rest/v1/kudos?slug=eq.${encodeURIComponent(slug)}&select=count`, {
     headers: {
       'apikey': SUPABASE_KEY,
@@ -117,11 +115,11 @@ layout: default
     localStorage.setItem(storageKey, '1');
     document.getElementById('kudos-btn').classList.add('clicked');
 
-    fetch(`${https://kubmqwqsrjyzohuuzlqp.supabase.co/kudos}/rest/v1/rpc/increment_kudos`, {
+    fetch(`${SUPABASE_URL}/rest/v1/rpc/increment_kudos`, {
       method: 'POST',
       headers: {
-        'apikey': sb_publishable_dmoBTp6pLVubHHLIzBlFdw_nilrnSC5,
-        'Authorization': 'Bearer ' + sb_publishable_dmoBTp6pLVubHHLIzBlFdw_nilrnSC5,
+        'apikey': SUPABASE_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_KEY,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ post_slug: slug })

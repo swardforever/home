@@ -22,3 +22,114 @@ layout: default
     {{ content }}
   </div>
 </article>
+
+<div class="kudos-wrap">
+  <button class="kudos-btn" id="kudos-btn" onclick="giveKudos()">
+    <span id="kudos-icon">✦</span>
+    <span id="kudos-count">—</span>
+  </button>
+  <p class="kudos-label">give kudos</p>
+</div>
+
+<style>
+  .kudos-wrap {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .kudos-btn {
+    background: rgba(10,5,20,0.75);
+    border: 1.5px solid rgba(168,85,247,0.4);
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: inherit;
+    gap: 2px;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+  }
+
+  .kudos-btn:hover {
+    border-color: #a855f7;
+    box-shadow: 0 0 24px rgba(168,85,247,0.3);
+    transform: scale(1.08);
+  }
+
+  .kudos-btn.clicked {
+    border-color: #a855f7;
+    box-shadow: 0 0 32px rgba(168,85,247,0.5);
+    background: rgba(168,85,247,0.15);
+  }
+
+  #kudos-icon {
+    font-size: 1.2rem;
+    color: #a855f7;
+  }
+
+  #kudos-count {
+    font-size: 0.72rem;
+    color: rgba(240,232,255,0.6);
+    font-family: inherit;
+  }
+
+  .kudos-label {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.06em;
+  }
+</style>
+
+<script>
+(function() {
+  const SUPABASE_URL = 'https://yourproject.supabase.co';
+  const SUPABASE_KEY = 'your-anon-key';
+  const slug = window.location.pathname;
+  const storageKey = 'kudos_given_' + slug;
+
+  // Check if already clicked
+  if (localStorage.getItem(storageKey)) {
+    document.getElementById('kudos-btn').classList.add('clicked');
+  }
+
+  // Load current count
+  fetch(`${SUPABASE_URL}/rest/v1/kudos?slug=eq.${encodeURIComponent(slug)}&select=count`, {
+    headers: {
+      'apikey': SUPABASE_KEY,
+      'Authorization': 'Bearer ' + SUPABASE_KEY
+    }
+  })
+  .then(r => r.json())
+  .then(data => {
+    const count = data.length ? data[0].count : 0;
+    document.getElementById('kudos-count').textContent = count;
+  });
+
+  window.giveKudos = function() {
+    if (localStorage.getItem(storageKey)) return;
+
+    localStorage.setItem(storageKey, '1');
+    document.getElementById('kudos-btn').classList.add('clicked');
+
+    fetch(`${https://kubmqwqsrjyzohuuzlqp.supabase.co/kudos}/rest/v1/rpc/increment_kudos`, {
+      method: 'POST',
+      headers: {
+        'apikey': sb_publishable_dmoBTp6pLVubHHLIzBlFdw_nilrnSC5,
+        'Authorization': 'Bearer ' + sb_publishable_dmoBTp6pLVubHHLIzBlFdw_nilrnSC5,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ post_slug: slug })
+    })
+    .then(() => {
+      const current = parseInt(document.getElementById('kudos-count').textContent) || 0;
+      document.getElementById('kudos-count').textContent = current + 1;
+    });
+  };
+})();
+</script>

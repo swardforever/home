@@ -6,7 +6,7 @@ tags: [life, philosophy]
 description: "my experience and reflection on suicidal ideation"
 ---
 
-## "Figure out what makes you click in the world." - anonymous deceased
+## "Figure out what makes you click in the world." - anonymous
 
 ##### This post contains mentions of self-harm and thinking on pain and suffering. If you are sensitive or uncomfortable with the topics stated, please do not read this post.
 

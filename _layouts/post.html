@@ -8,6 +8,7 @@ layout: default
     <h1 class="post-title">{{ page.title }}</h1>
     <div class="post-meta">
       <time>{{ page.date | date: "%B %-d, %Y" }}</time>
+      <span>{{ page.content | number_of_words }} words</span>
       {% if page.tags %}
         <span class="post-tags">
           {% for tag in page.tags %}
@@ -88,13 +89,16 @@ layout: default
 
 <script>
 (function() {
-  const SUPABASE_URL = 'https://kubmqwqsrjyzohuuzlqp.supabase.co/rest/v1/';
+  const SUPABASE_URL = 'https://kubmqwqsrjyzohuuzlqp.supabase.co';
   const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt1Ym1xd3Fzcmp5em9odXV6bHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMzAzMTYsImV4cCI6MjA5MjkwNjMxNn0.U79OyoU7YbKUBHRWJkvwaWPdXzVCDZfPpYFvxPQeu8o';
+
   const slug = window.location.pathname;
   const storageKey = 'kudos_given_' + slug;
+  const btn = document.getElementById('kudos-btn');
+  const countEl = document.getElementById('kudos-count');
 
   if (localStorage.getItem(storageKey)) {
-    document.getElementById('kudos-btn').classList.add('clicked');
+    btn.classList.add('clicked');
   }
 
   fetch(`${SUPABASE_URL}/rest/v1/kudos?slug=eq.${encodeURIComponent(slug)}&select=count`, {
@@ -105,15 +109,18 @@ layout: default
   })
   .then(r => r.json())
   .then(data => {
-    const count = data.length ? data[0].count : 0;
-    document.getElementById('kudos-count').textContent = count;
-  });
+    countEl.textContent = (data.length && data[0].count) ? data[0].count : 0;
+  })
+  .catch(() => { countEl.textContent = '0'; });
 
   window.giveKudos = function() {
     if (localStorage.getItem(storageKey)) return;
 
     localStorage.setItem(storageKey, '1');
-    document.getElementById('kudos-btn').classList.add('clicked');
+    btn.classList.add('clicked');
+
+    const current = parseInt(countEl.textContent) || 0;
+    countEl.textContent = current + 1;
 
     fetch(`${SUPABASE_URL}/rest/v1/rpc/increment_kudos`, {
       method: 'POST',
@@ -124,9 +131,11 @@ layout: default
       },
       body: JSON.stringify({ post_slug: slug })
     })
-    .then(() => {
-      const current = parseInt(document.getElementById('kudos-count').textContent) || 0;
-      document.getElementById('kudos-count').textContent = current + 1;
+    .catch(() => {
+      // If call fails, revert
+      localStorage.removeItem(storageKey);
+      btn.classList.remove('clicked');
+      countEl.textContent = current;
     });
   };
 })();

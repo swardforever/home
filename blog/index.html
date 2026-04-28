@@ -114,6 +114,13 @@ title: blog
     align-items: center;
   }
 
+  .card-kudos {
+    color: rgba(168,85,247,0.7);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    margin-left: auto;
+  }
+  
   .tag {
     background: rgba(168,85,247,0.15);
     border: 1px solid rgba(168,85,247,0.3);
@@ -155,6 +162,7 @@ title: blog
         <span class="card-meta">
           <time>{{ post.date | date: "%B %-d, %Y" }}</time>
           <span>{{ post.content | number_of_words }} words</span>
+            <span class="card-kudos" data-slug="{{ post.url }}">✦ —</span>
             {% if post.tags %}
              {% for tag in post.tags %}
               <span class="tag">{{ tag }}</span>
@@ -194,6 +202,42 @@ title: blog
       });
 
       noResults.style.display = visible === 0 ? 'block' : 'none';
+    });
+  });
+})();
+</script>
+
+<script>
+(function() {
+  const SUPABASE_URL = 'https://kubmqwqsrjyzohuuzlqp.supabase.co/rest/v1/';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt1Ym1xd3Fzcmp5em9odXV6bHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMzAzMTYsImV4cCI6MjA5MjkwNjMxNn0.U79OyoU7YbKUBHRWJkvwaWPdXzVCDZfPpYFvxPQeu8o';
+
+  const kudosEls = document.querySelectorAll('.card-kudos');
+  if (!kudosEls.length) return;
+
+  fetch(`${SUPABASE_URL}/rest/v1/kudos?select=slug,count`, {
+    headers: {
+      'apikey': SUPABASE_KEY,
+      'Authorization': 'Bearer ' + SUPABASE_KEY
+    }
+  })
+  .then(r => r.json())
+  .then(data => {
+    const map = {};
+    data.forEach(row => { map[row.slug] = row.count; });
+
+    kudosEls.forEach(el => {
+      const slug = el.dataset.slug;
+      const count = map[slug] || 0;
+      el.textContent = `✦ ${count}`;
+    });
+
+    document.querySelectorAll('.post-card').forEach(card => {
+      const kudosEl = card.querySelector('.card-kudos');
+      if (kudosEl) {
+        const count = parseInt(kudosEl.textContent.replace('✦', '').trim()) || 0;
+        card.dataset.kudos = count;
+      }
     });
   });
 })();

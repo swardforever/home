@@ -1,0 +1,9 @@
+---
+layout: post
+title: "peculiar panels"
+date: 2026-07-17
+tags: [track]
+description: "some world cup discourse"
+---
+
+Every few years, there's a momentous event in some field that revolutionizes it. The drug daraxonrasib has proven to be notoriously effective against pancreatic cancer since its recent discovery some months prior. Artificial intelligence has had irrefutable effects on the economy and the world at large with its ballooning development. The digitization of board games such as checkers and chess has led to popularity booms, trackflation continues to produce incredible prodigies at seemingly younger and younger ages, exploration missions like Artemis II delve into uncharted areas, and wars begin and rage on for years. But many of these events are actually recurring. The presidential cycle in America, for one, saw Donald Trump back to his presidential seat in late 2025 and repeats every four years. Leap years also occur every four years. Indeed, the FIFA World Cup also occurs every four years and is the most globally viewed sporting event, drawing in about 5 billion viewers. (Incidentally, the Paris Olympic Games drew in staggering numbers close to 5 billion as well - and the Summer Olympic Games also occurs every four years.) Because of its rarity, I figured I should take note of this occasion and dedicate a little bit of time to it. But to where would I go? I am by no means a soccer fan, and only know the names of current star players and some very famous, practically baseline knowledge (like Zlatan's bicycle kick or the Hand of God). Moreover, divulging my opinion on certain players and teams, even if I were to do research on them, would be moot and not contribute much at all. There is so much harmful discourse happening in the sultriest of places, with self-appointed 'enlightened' individuals duking it out in an epic battle of, in actuality, prosaic and repetitive battles of opinion. With this in mind, I chose to turn to 

@@ -14,7 +14,7 @@ It is fairly intuitive that increasing the number of flat faces makes an object 
 
 One might reasonably ask why twelve pentagons are necessary at all. Why not simply construct the ball entirely from hexagons? The answer lies in one of those delightful situations where geometry quietly dictates reality. A regular hexagon possesses interior angles of 120°, meaning that three hexagons meeting at a point sum to exactly 360°. Pentagons, however, contribute only 108° at each corner. Three meeting together total 324°, leaving a missing angle of 36°. Twelve such defects distributed throughout the structure produce precisely enough curvature for it to become a truncated icosahedron. You may recognize this terminology hearing of the same geometry adopted by buckminsterfullerene, the famous C₆₀ carbon molecule or the buckyball. The geometry, however, is only half the story. 
 
-________
+_________
 
 In 1997, Roberto Carlos scored a free kick against France. The ball appeared destined for the advertising boards before unbelievably curving inside the post, prompting countless viewers to conclude that something supernatural had occurred. How can one explain this?
 

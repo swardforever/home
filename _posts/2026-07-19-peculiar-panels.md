@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "peculiar panels"
-date: 2026-07-17
+date: 2026-07-19
 tags: [physics]
 description: "some world cup discourse"
 ---

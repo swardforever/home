@@ -34,7 +34,9 @@ ________
 
 Remark: This is my first post in some time; I felt rather stagnant in updating this blog, as I couldn’t muster up the effort to type something in-depth up. Any time I tried to, I would reject it; because of some of the pieces that I put out before my hiatus, I tried to hold myself to the same depth of work. Finally, I’ve seemingly overcome my writer’s block and put out a reasonable piece here. I will (hopefully) be back to weekly posts starting now.
 
-As of today, the World Cup final has concluded, so it’s a pretty good time to put this out. Argentina weaseled their way to the final, so I’m pretty glad to see them go out in such a fashion that enraged many fans. Probably my favorite moment was Messi trying to red card a spanish player for covering his mouth while speaking.
+As of today, the World Cup final has concluded, so it’s a pretty good time to put this out. Argentina weaseled their way to the final, so I’m pretty glad to see them go out in such a fashion that enraged many fans. Probably my favorite moment was Messi trying to red card a Spanish player for covering his mouth while speaking.
+
+Oh, and here's a [cool video](https://youtu.be/XGMYTJWISrQ?is=abA4QSieciPiO6GW) that blew up because it happened to be right.
 
 
 

@@ -6,4 +6,4 @@ tags: [philosophy, life]
 description: "thoughts on instability in perspectives"
 ---
 
-lorem ipsum for about 2 hours
+never mind the lorem ipsum will extend to 8/2 most likely

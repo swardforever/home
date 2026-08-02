@@ -36,7 +36,7 @@ ___
 
 Despite all the hallmarks of a short film cooked up for a cinematography class, many viewers found the young man's project rather gripping; despite all my apparent slander for its cringiness, I must agree. This little skit, however, was particularly insightful for me. In spite of all its cliches, I must praise the project directors for instilling this question deep into my mind, and the boy's very content answer. All the same, I think of moments I think I would rather forget sometimes, fights with people that I cherished but are now disconnected from me, times where I did not do someone credit, when I have slandered people behind their backs, and I feel guilty, even while knowing that my mortality's mistakes are inevitable.
 
-All of this thinking leads me back to the question. Well, if concepts like samsara are real, the loss of all my memories from my previous lives is something I greatly despise. Isn't it better, I plead in a wondrous voice like a child who has hopes of sanctity and heroism from his beloved parents, a sanctiminious voice that proclaims my class as one who has never really experienced that sort of pain, to have experienced everything and come out stronger?
+All of this thinking leads me back to the question. If concepts like samsara are real, the loss of all my memories from my previous lives is something I greatly despise. Isn't it better, I plead in a wondrous voice like a child who has hopes of sanctity and heroism from his beloved parents, a sanctiminious voice that proclaims my class as one who has never really experienced that sort of pain, to have experienced everything and come out stronger?
 
 Right?
 

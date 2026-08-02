@@ -6,7 +6,7 @@ tags: [philosophy, life]
 description: "thoughts on instability in perspectives"
 ---
 
-"If an ant carries an object a hundred times its weight, you can carry burdens many times your size." - Matshona Dhliwayo
+## "If an ant carries an object a hundred times its weight, you can carry burdens many times your size." - Matshona Dhliwayo
 
 I broke up with my girlfriend roughly four months ago. It was a mutually agreed upon decision with few fireworks like the teary breakups of old; in reality, we had of course drifted apart months prior and were only called a couple by name or from others. There were many reasons for this, but primary among them was our propensity to never understand each other because our realities differed so widely. We will come back to this in a little while, after a deeper exploration of what I mean when I say ‘realities’.
 

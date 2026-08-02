@@ -45,4 +45,4 @@ Remark: Please excuse my memory, as I have reconstructed and dramatized both sto
 
 Happy anniversary to us and our thick skulls. You get a post tomorrow because it's not finished yet. As for the rest of you, wasn't waiting a day worth it now that you're getting TWO posts in one week? Unheard of.
 
-I found the [short film][https://www.youtube.com/watch?v=hif5eI5pBxo]. However, I feel like the reproduction from my memory will be fun to compare to the actual thing. Adding that to the fact that I have another blog post to write, I will leave the digging to the reader.
+I found the [short film](https://www.youtube.com/watch?v=hif5eI5pBxo). However, I feel like the reproduction from my memory will be fun to compare to the actual thing. Adding that to the fact that I have another blog post to write, I will leave the digging to the reader.

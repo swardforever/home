@@ -3,7 +3,7 @@ layout: post
 title: "ants and their god"
 date: 2026-08-02
 tags: [philosophy, life]
-description: "thoughts on instability in perspectives"
+description: "an essay criticizing information dispersal and echo chambers"
 ---
 
 ## "If an ant carries an object a hundred times its weight, you can carry burdens many times your size." - Matshona Dhliwayo

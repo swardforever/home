@@ -38,8 +38,6 @@ Despite all the hallmarks of a short film cooked up for a cinematography class, 
 
 All of this thinking leads me back to the question. If concepts like samsara are real, the loss of all my memories from my previous lives is something I greatly despise. Isn't it better, I plead in a wondrous voice like a child who has hopes of sanctity and heroism from his beloved parents, a sanctiminious voice that proclaims my class as one who has never really experienced that sort of pain, to have experienced everything and come out stronger?
 
-Right?
-
 ___
 
 Remark: Please excuse my memory, as I have reconstructed and dramatized both stories from what fragments remain in my mind.

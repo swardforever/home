@@ -62,7 +62,7 @@ What two people is this story about again?
 
 ___
 
-Remark: Please excuse my memory, as I have reconstructed and dramatized both stories from what fragments remain in my mind. The cracked vignettes stylistic choice is not something I plan to repeat soon, because it's a lot easier to get your point across without them. Also, I swear I'm not trying to be judgy through a philosophical lens or encourage thinking about my memories here to try and piece together what it means. If you did, that'd be cool, but maybe it's a better use of your time to look inward instead towards your own experiences.
+Remark: Please excuse my memory, as I have reconstructed and dramatized both stories from what fragments remain in my mind. The cracked vignettes stylistic choice is not something I plan to repeat soon, because it's a lot easier to get your point across without them. Also, I swear I'm not trying to be judgy through a philosophical lens or encourage thinking about my memories here to try and piece together what it means. If you did, that'd be cool, but maybe it's a better use of your time to look inward instead towards your own experiences. After all, this whole blog is just a kid trying to be dramatic through writing.
 
 Happy anniversary to us and our thick skulls. You get a post tomorrow because it's not finished yet. As for the rest of you, wasn't waiting a day worth it now that you're getting TWO posts in one week? Unheard of.
 

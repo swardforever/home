@@ -6,8 +6,6 @@ tags: [life]
 description: "a story about two people of little importance"
 ---
 
-## "You will forget this ever happened within just a few days."
-
 This is a story about two people.
 
 One winter when I was still very young and naive, even more than I am now, I traveled with my parents to Chicago, the suburbs of which was where I lived. There happened to be a glorious sunset on this day, as the great blue clashed spectacularly with purple and orange in one last act of fierce defiance. As I walked into the underground train station during the evening, perhaps holding my mother's hand, I saw a man sitting on the floor. He was homeless, a fact which is so tragically unremarkable that I may not even need to mention it at all. In front of him on the ground there was an oblong, dark object, as black as the asphalt above. Hovering over the man was another individual dressed as a doctor, carrying a bag. My best guess was that he was on his way home from his job at some medical facility. The doctor was imploring the man on the ground, who was unresponsive, to go to the emergency room, that if he didn't get to the hospital, he would die. This elicited no verbal response from the man on the ground, who did not even bother, or perhaps was unable, to move. The doctor gave up pretty quickly; he had a train to catch.
